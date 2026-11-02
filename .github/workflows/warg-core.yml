@@ -1,0 +1,32 @@
+name: WARG core smoke tests
+
+on:
+  push:
+    branches: [gpt]
+    paths:
+      - 'warg-core/**'
+      - 'scripts/test-warg-core.sh'
+      - '.github/workflows/warg-core.yml'
+  pull_request:
+    branches: [gpt]
+    paths:
+      - 'warg-core/**'
+      - 'scripts/test-warg-core.sh'
+      - '.github/workflows/warg-core.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  core-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gpt
+        uses: actions/checkout@v4
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile and execute WARG core smoke tests
+        run: sh scripts/test-warg-core.sh
