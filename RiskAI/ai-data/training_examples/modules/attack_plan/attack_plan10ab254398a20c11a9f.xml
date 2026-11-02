@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<attack_plan>
+	<player_reference>
+		yellow
+	</player_reference>
+	<game_file>
+		game10ab24799852c844f6c.xml
+	</game_file>
+	<current_round>
+		7
+	</current_round>
+	<data_used>
+		<board_file>
+			board10ab25434c5774f7f.xml
+		</board_file>
+		<goal_distribution>
+			<conquer_and_defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.5
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.95
+				</continent>
+			</conquer_and_defend_continent>
+			<conquer_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</conquer_continent>
+			<defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</defend_continent>
+			<obstruct_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.3
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</obstruct_continent>
+			<obstruct_and_defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</obstruct_and_defend_continent>
+			<attack_player>
+				<player name="black">
+					0.0
+				</player>
+				<player name="red">
+					0.0
+				</player>
+				<player name="green">
+					0.0
+				</player>
+				<player name="blue">
+					0.0
+				</player>
+				<player name="yellow">
+					0.0
+				</player>
+				<player name="white">
+					0.0
+				</player>
+			</attack_player>
+			<territories_18>
+				0.0
+			</territories_18>
+			<territories_24>
+				0.0
+			</territories_24>
+		</goal_distribution>
+	</data_used>
+	<attack_plan_extended>
+		<attack_plan>
+			<territories>
+				Indonesia
+				New-Guinea
+			</territories>
+			<armies_to_leave>
+				1
+				1
+			</armies_to_leave>
+		</attack_plan>
+		<cost_estimated>
+			1
+		</cost_estimated>
+		<cost_minimum>
+			1
+		</cost_minimum>
+		<priority>
+			1.52
+		</priority>
+		<score>
+			65.83182
+		</score>
+	</attack_plan_extended>
+</attack_plan>

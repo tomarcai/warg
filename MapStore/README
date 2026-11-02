@@ -1,0 +1,51 @@
+MapStore
+
+Installation:
+
+# make sure apache 2 is installed
+sudo apt install apache2
+sudo apt install libapache2-mod-wsgi
+
+# if this is no longer available, manually install with
+sudo dpkg -i lib/python-is-python2_2.7.17-4_all.deb
+sudo dpkg -i lib/libapache2-mod-wsgi_4.6.8-1ubuntu3.1_amd64.deb 
+
+sudo a2enmod rewrite
+
+# we need to get all the extras for Django
+sudo -H pip install Django==1.2.7 --no-cache-dir --no-binary all
+
+# PIP NEEDS TO BE RUN WITH SUDO!!!!! or wont run from apache
+sudo -H pip install -r requirments.txt
+
+# django-ratings is in a local folder
+sudo pip install django-ratings
+
+# database & storage must have read/write permissions for www-data group
+chmod -R ug+rw database storage
+chgrp -R www-data database storage
+
+# Link risk.apache2-conf to /etc/apache2/sites-enabled, be sure to set correct paths in this file
+sudo ln -s risk.apache2-conf /etc/apache2/sites-enabled/risk.conf
+
+# ./static/admin must point to your django install static admin files, something like:
+ln -s /usr/local/lib/python2.7/dist-packages/django/contrib/admin/media static/admin
+
+
+
+Optional - tell apache2 to restart on errors
+
+$ sudo vim /lib/systemd/system/apache2.service
+change "Restart=on-abort" to "Restart=always" in the [Service] section
+Then run these commends to reload the changes:
+$ sudo systemctl daemon-reload
+$ sudo service apache2 restart
+
+
+
+
+
+Running tests
+
+$ python manage.py test riskmaps
+

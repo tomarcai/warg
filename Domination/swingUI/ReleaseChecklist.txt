@@ -1,0 +1,34 @@
+Release Checklist:
+
+Testing:
+
+make sure game is installed in location that has space ' ' in path!
+
+Check GameGUI, SwingGUI and Domination4ME runs on all systems:
+ - Windows Java 1.5 (check the oldest supported version of java)
+ - Windows Java 21 (check new windows scaling works)
+ - Linux Java 1.8 (check old linux audio system works)
+ - Linux Java 21 (check gtk scaling works)
+ - macOS Java 1.8 (check oldest java on mac)
+ - macOS Java 21 (check newest java on mac)
+
+Check game runs when run from wrong folder:
+$ java -jar build/game/Domination.jar
+$ java -cp build/game/Domination.jar net.yura.domination.ui.swinggui.SwingGUIFrame
+
+Check game runs without any libs or resources
+$ java -jar dist/Domination.jar
+$ java -cp dist/Domination.jar net.yura.domination.ui.swinggui.SwingGUIFrame
+
+
+
+Upload dist exe/jar/zip to https://sourceforge.net/projects/domination/files/Domination/
+
+Update the risk.sf.net website download.shtml and index.shtml
+https://sourceforge.net/p/domination/code/HEAD/tree/website/
+https://svn.code.sf.net/p/domination/code/website
+
+Update the yura.net website with DominationVersion and RiskVersion
+https://sourceforge.net/p/jrisk/code/HEAD/tree/fire-website/
+https://svn.code.sf.net/p/jrisk/code/fire-website
+

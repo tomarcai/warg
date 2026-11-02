@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module_run>
+	<player_reference>
+		black
+	</player_reference>
+	<game_file>
+		game10ab24776894f901768.xml
+	</game_file>
+	<current_round>
+		6
+	</current_round>
+	<input>
+		<missions_estimates>
+			<player color="black">
+				<mission type="Asia,South-America">
+					0.042087544
+				</mission>
+				<mission type="Europe,Australia,random">
+					0.20686027
+				</mission>
+				<mission type="Asia,Africa">
+					0.013678451
+				</mission>
+				<mission type="Europe,South-America,random">
+					0.24095118
+				</mission>
+				<mission type="North-America,Australia">
+					0.019360268
+				</mission>
+				<mission type="North-America,Africa">
+					0.025042087
+				</mission>
+				<mission type="18">
+					0.037037037
+				</mission>
+				<mission type="24">
+					0.027777778
+				</mission>
+				<mission type="kill black">
+					-0.005892256
+				</mission>
+				<mission type="kill red">
+					-0.005892256
+				</mission>
+				<mission type="kill green">
+					0.13994108
+				</mission>
+				<mission type="kill blue">
+					0.16077441
+				</mission>
+				<mission type="kill yellow">
+					0.09827441
+				</mission>
+			</player>
+			<player color="red">
+				<mission type="Asia,South-America">
+					0.023100981
+				</mission>
+				<mission type="Europe,Australia,random">
+					0.22245443
+				</mission>
+				<mission type="Asia,Africa">
+					0.024178566
+				</mission>
+				<mission type="Europe,South-America,random">
+					-0.0016835016
+				</mission>
+				<mission type="North-America,Australia">
+					0.22245443
+				</mission>
+				<mission type="North-America,Africa">
+					-6.059155E-4
+				</mission>
+				<mission type="18">
+					0.018518519
+				</mission>
+				<mission type="24">
+					0.15277778
+				</mission>
+				<mission type="kill black">
+					0.022306398
+				</mission>
+				<mission type="kill red">
+					-0.0155723905
+				</mission>
+				<mission type="kill green">
+					0.098063976
+				</mission>
+				<mission type="kill blue">
+					0.17382155
+				</mission>
+				<mission type="kill yellow">
+					0.060185187
+				</mission>
+			</player>
+			<player color="green">
+				<mission type="Asia,South-America">
+					0.23459627
+				</mission>
+				<mission type="Europe,Australia,random">
+					0.008964495
+				</mission>
+				<mission type="Asia,Africa">
+					0.011672076
+				</mission>
+				<mission type="Europe,South-America,random">
+					0.23549879
+				</mission>
+				<mission type="North-America,Australia">
+					0.0053543863
+				</mission>
+				<mission type="North-America,Africa">
+					0.008964495
+				</mission>
+				<mission type="18">
+					0.018518519
+				</mission>
+				<mission type="24">
+					0.125
+				</mission>
+				<mission type="kill black">
+					0.03597247
+				</mission>
+				<mission type="kill red">
+					0.07273717
+				</mission>
+				<mission type="kill green">
+					-0.013047138
+				</mission>
+				<mission type="kill blue">
+					0.13401169
+				</mission>
+				<mission type="kill yellow">
+					0.121756785
+				</mission>
+			</player>
+			<player color="blue">
+				<mission type="Asia,South-America">
+					0.011239444
+				</mission>
+				<mission type="Europe,Australia,random">
+					0.026266767
+				</mission>
+				<mission type="Asia,Africa">
+					0.21479136
+				</mission>
+				<mission type="Europe,South-America,random">
+					0.019436166
+				</mission>
+				<mission type="North-America,Australia">
+					0.0044088424
+				</mission>
+				<mission type="North-America,Africa">
+					0.20113015
+				</mission>
+				<mission type="18">
+					0.0
+				</mission>
+				<mission type="24">
+					0.19444445
+				</mission>
+				<mission type="kill black">
+					0.09286745
+				</mission>
+				<mission type="kill red">
+					0.10137085
+				</mission>
+				<mission type="kill green">
+					0.09286745
+				</mission>
+				<mission type="kill blue">
+					-0.017676767
+				</mission>
+				<mission type="kill yellow">
+					0.058853846
+				</mission>
+			</player>
+			<player color="yellow">
+				<mission type="Asia,South-America">
+					0.10521886
+				</mission>
+				<mission type="Europe,Australia,random">
+					0.0256734
+				</mission>
+				<mission type="Asia,Africa">
+					0.13930976
+				</mission>
+				<mission type="Europe,South-America,random">
+					0.0256734
+				</mission>
+				<mission type="North-America,Australia">
+					0.09385522
+				</mission>
+				<mission type="North-America,Africa">
+					0.12794612
+				</mission>
+				<mission type="18">
+					0.037037037
+				</mission>
+				<mission type="24">
+					0.083333336
+				</mission>
+				<mission type="kill black">
+					0.1026936
+				</mission>
+				<mission type="kill red">
+					0.17845118
+				</mission>
+				<mission type="kill green">
+					0.045875423
+				</mission>
+				<mission type="kill blue">
+					0.045875423
+				</mission>
+				<mission type="kill yellow">
+					-0.010942761
+				</mission>
+			</player>
+		</missions_estimates>
+		<continent_estimates>
+			<player color="black">
+				<continent name="North-America">
+					<round number="0">
+						0.0291
+					</round>
+					<round number="1">
+						0.05692
+					</round>
+					<round number="2">
+						0.1521
+					</round>
+					<round number="3">
+						0.2199
+					</round>
+					<round number="4">
+						0.28879
+					</round>
+				</continent>
+				<continent name="South-America">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Europe">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Africa">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Asia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Australia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.00721
+					</round>
+				</continent>
+			</player>
+			<player color="red">
+				<continent name="North-America">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="South-America">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.00597
+					</round>
+					<round number="2">
+						0.02943
+					</round>
+					<round number="3">
+						0.05106
+					</round>
+					<round number="4">
+						0.08224
+					</round>
+				</continent>
+				<continent name="Europe">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.00471
+					</round>
+					<round number="2">
+						0.12342
+					</round>
+					<round number="3">
+						0.22212
+					</round>
+					<round number="4">
+						0.32806
+					</round>
+				</continent>
+				<continent name="Africa">
+					<round number="0">
+						0.02226
+					</round>
+					<round number="1">
+						0.13459
+					</round>
+					<round number="2">
+						0.39557
+					</round>
+					<round number="3">
+						0.52331
+					</round>
+					<round number="4">
+						0.64053
+					</round>
+				</continent>
+				<continent name="Asia">
+					<round number="0">
+						0.98931
+					</round>
+					<round number="1">
+						0.99311
+					</round>
+					<round number="2">
+						0.99743
+					</round>
+					<round number="3">
+						0.99874
+					</round>
+					<round number="4">
+						0.99907
+					</round>
+				</continent>
+				<continent name="Australia">
+					<round number="0">
+						0.97971
+					</round>
+					<round number="1">
+						0.99064
+					</round>
+					<round number="2">
+						0.99706
+					</round>
+					<round number="3">
+						0.9981
+					</round>
+					<round number="4">
+						0.99917
+					</round>
+				</continent>
+			</player>
+			<player color="green">
+				<continent name="North-America">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.01886
+					</round>
+					<round number="4">
+						0.09951
+					</round>
+				</continent>
+				<continent name="South-America">
+					<round number="0">
+						1.0
+					</round>
+					<round number="1">
+						1.0
+					</round>
+					<round number="2">
+						1.0
+					</round>
+					<round number="3">
+						1.0
+					</round>
+					<round number="4">
+						1.0
+					</round>
+				</continent>
+				<continent name="Europe">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.12342
+					</round>
+					<round number="4">
+						0.54617
+					</round>
+				</continent>
+				<continent name="Africa">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.39557
+					</round>
+					<round number="4">
+						0.80835
+					</round>
+				</continent>
+				<continent name="Asia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.01319
+					</round>
+					<round number="4">
+						0.22053
+					</round>
+				</continent>
+				<continent name="Australia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.78532
+					</round>
+					<round number="2">
+						0.96638
+					</round>
+					<round number="3">
+						0.99706
+					</round>
+					<round number="4">
+						0.99984
+					</round>
+				</continent>
+			</player>
+			<player color="blue">
+				<continent name="North-America">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.00778
+					</round>
+					<round number="4">
+						0.11006
+					</round>
+				</continent>
+				<continent name="South-America">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.05106
+					</round>
+					<round number="3">
+						0.35612
+					</round>
+					<round number="4">
+						0.7342
+					</round>
+				</continent>
+				<continent name="Europe">
+					<round number="0">
+						0.88955
+					</round>
+					<round number="1">
+						0.99706
+					</round>
+					<round number="2">
+						0.99992
+					</round>
+					<round number="3">
+						0.99999
+					</round>
+					<round number="4">
+						1.0
+					</round>
+				</continent>
+				<continent name="Africa">
+					<round number="0">
+						1.0
+					</round>
+					<round number="1">
+						1.0
+					</round>
+					<round number="2">
+						1.0
+					</round>
+					<round number="3">
+						1.0
+					</round>
+					<round number="4">
+						1.0
+					</round>
+				</continent>
+				<continent name="Asia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.03935
+					</round>
+					<round number="3">
+						0.49341
+					</round>
+					<round number="4">
+						0.8719
+					</round>
+				</continent>
+				<continent name="Australia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.09196
+					</round>
+					<round number="2">
+						0.887
+					</round>
+					<round number="3">
+						0.99311
+					</round>
+					<round number="4">
+						0.99967
+					</round>
+				</continent>
+			</player>
+			<player color="yellow">
+				<continent name="North-America">
+					<round number="0">
+						0.1521
+					</round>
+					<round number="1">
+						0.2199
+					</round>
+					<round number="2">
+						0.37226
+					</round>
+					<round number="3">
+						0.45006
+					</round>
+					<round number="4">
+						0.52861
+					</round>
+				</continent>
+				<continent name="South-America">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Europe">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Africa">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Asia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.0
+					</round>
+				</continent>
+				<continent name="Australia">
+					<round number="0">
+						0.0
+					</round>
+					<round number="1">
+						0.0
+					</round>
+					<round number="2">
+						0.0
+					</round>
+					<round number="3">
+						0.0
+					</round>
+					<round number="4">
+						0.00721
+					</round>
+				</continent>
+			</player>
+		</continent_estimates>
+		<winning_estimates>
+			<player color="black">
+				<round number="0">
+					0.0
+				</round>
+				<round number="1">
+					0.0
+				</round>
+				<round number="2">
+					0.0
+				</round>
+				<round number="3">
+					0.14916301
+				</round>
+				<round number="4">
+					0.6125593
+				</round>
+			</player>
+			<player color="red">
+				<round number="0">
+					0.0
+				</round>
+				<round number="1">
+					0.003436006
+				</round>
+				<round number="2">
+					0.09101418
+				</round>
+				<round number="3">
+					0.16418518
+				</round>
+				<round number="4">
+					0.24283338
+				</round>
+			</player>
+			<player color="green">
+				<round number="0">
+					0.0
+				</round>
+				<round number="1">
+					0.0
+				</round>
+				<round number="2">
+					0.0
+				</round>
+				<round number="3">
+					0.096599355
+				</round>
+				<round number="4">
+					0.4286726
+				</round>
+			</player>
+			<player color="blue">
+				<round number="0">
+					0.0
+				</round>
+				<round number="1">
+					0.0
+				</round>
+				<round number="2">
+					0.028173465
+				</round>
+				<round number="3">
+					0.35326734
+				</round>
+				<round number="4">
+					0.6242553
+				</round>
+			</player>
+			<player color="yellow">
+				<round number="0">
+					0.12408305
+				</round>
+				<round number="1">
+					0.1538963
+				</round>
+				<round number="2">
+					0.17983119
+				</round>
+				<round number="3">
+					0.20145352
+				</round>
+				<round number="4">
+					0.2200065
+				</round>
+			</player>
+		</winning_estimate>
+		<ownership>
+			<player color="black">
+				<continent name="North-America">
+					false
+				</continent>
+				<continent name="South-America">
+					false
+				</continent>
+				<continent name="Europe">
+					false
+				</continent>
+				<continent name="Africa">
+					false
+				</continent>
+				<continent name="Asia">
+					false
+				</continent>
+				<continent name="Australia">
+					false
+				</continent>
+			</player>
+			<player color="red">
+				<continent name="North-America">
+					false
+				</continent>
+				<continent name="South-America">
+					false
+				</continent>
+				<continent name="Europe">
+					false
+				</continent>
+				<continent name="Africa">
+					false
+				</continent>
+				<continent name="Asia">
+					false
+				</continent>
+				<continent name="Australia">
+					false
+				</continent>
+			</player>
+			<player color="green">
+				<continent name="North-America">
+					false
+				</continent>
+				<continent name="South-America">
+					true
+				</continent>
+				<continent name="Europe">
+					false
+				</continent>
+				<continent name="Africa">
+					false
+				</continent>
+				<continent name="Asia">
+					false
+				</continent>
+				<continent name="Australia">
+					false
+				</continent>
+			</player>
+			<player color="blue">
+				<continent name="North-America">
+					false
+				</continent>
+				<continent name="South-America">
+					false
+				</continent>
+				<continent name="Europe">
+					false
+				</continent>
+				<continent name="Africa">
+					true
+				</continent>
+				<continent name="Asia">
+					false
+				</continent>
+				<continent name="Australia">
+					false
+				</continent>
+			</player>
+			<player color="yellow">
+				<continent name="North-America">
+					false
+				</continent>
+				<continent name="South-America">
+					false
+				</continent>
+				<continent name="Europe">
+					false
+				</continent>
+				<continent name="Africa">
+					false
+				</continent>
+				<continent name="Asia">
+					false
+				</continent>
+				<continent name="Australia">
+					false
+				</continent>
+			</player>
+		</ownership>
+		<nextmove_estimate>
+			India
+			Middle-East
+			Afghanistan
+			Ural
+			Ukraine
+			Scandinavia
+			Iceland
+			Great-Britain
+			Northern-Europe
+			Western-Europe
+			Southern-Europe
+			North-Africa
+			Brazil
+			Greenland
+			Egypt
+			East-Africa
+			Madagascar
+			South-Africa
+			Congo
+			North-West-Territory
+			Alaska
+			Kamchatka
+			Japan
+			Mongolia
+			Irkutsk
+			Yakutsk
+			Siberia
+			China
+			Siam
+			Indonesia
+			Western-Australia
+			Eastern-Australia
+			New-Guinea
+		</nextmove_estimate>
+	</input>
+	<output>
+		<goal_distribution>
+			<conquer_and_defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</conquer_and_defend_continent>
+			<conquer_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</conquer_continent>
+			<defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</defend_continent>
+			<obstruct_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.3
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.3
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</obstruct_continent>
+			<obstruct_and_defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</obstruct_and_defend_continent>
+			<attack_player>
+				<player name="black">
+					0.0
+				</player>
+				<player name="red">
+					0.0
+				</player>
+				<player name="green">
+					0.0
+				</player>
+				<player name="blue">
+					0.0
+				</player>
+				<player name="yellow">
+					0.0
+				</player>
+			</attack_player>
+			<territories_18>
+				0.2
+			</territories_18>
+			<territories_24>
+				0.0
+			</territories_24>
+		</goal_distribution>
+	</output>
+</module_run>

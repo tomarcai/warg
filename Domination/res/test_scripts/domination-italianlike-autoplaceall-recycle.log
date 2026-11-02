@@ -1,0 +1,1450 @@
+ip-172-31-6-90#7854981771847982080 choosemap luca.map
+player2 newplayer human green Junior97
+player4 newplayer human red xi ji ping pong
+player3 newplayer human magenta L’Altissimo
+player1 newplayer human cyan Gab26
+ip-172-31-6-90#7854981771847982080 startgame domination italianlike autoplaceall recycle
+PLAYER 2
+PLACEALL 22 2 30 23 12 34 18 10 26 20 28 21 19 38 32 15 5 14 11 16 17 8 31 7 27 6 25 41 33 40 1 42 3 37 29 35 13 39 36 9 24 4
+player2 placearmies 36 1
+CARD
+player4 placearmies 41 1
+CARD
+player3 placearmies 12 1
+CARD
+player1 placearmies 40 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 41 1
+CARD
+player3 placearmies 12 1
+CARD
+player1 placearmies 39 1
+CARD
+player2 placearmies 32 1
+CARD
+player4 placearmies 41 1
+CARD
+player3 placearmies 12 1
+CARD
+player1 placearmies 39 1
+CARD
+player2 placearmies 36 1
+CARD
+player4 placearmies 41 1
+CARD
+player3 placearmies 12 1
+CARD
+player1 placearmies 2 1
+CARD
+player2 placearmies 36 1
+CARD
+player4 placearmies 41 1
+CARD
+player3 placearmies 24 1
+CARD
+player1 placearmies 40 1
+CARD
+player2 placearmies 32 1
+CARD
+player4 placearmies 41 1
+CARD
+player3 placearmies 24 1
+CARD
+player1 placearmies 40 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 35 1
+CARD
+player3 placearmies 22 1
+CARD
+player1 placearmies 40 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 35 1
+CARD
+player3 placearmies 22 1
+CARD
+player1 placearmies 40 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 42 1
+CARD
+player3 placearmies 22 1
+CARD
+player1 placearmies 40 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 42 1
+CARD
+player3 placearmies 22 1
+CARD
+player1 placearmies 40 1
+CARD
+player2 placearmies 31 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 5 1
+CARD
+player1 placearmies 2 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 5 1
+CARD
+player1 placearmies 4 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 33 1
+CARD
+player1 placearmies 39 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 33 1
+CARD
+player1 placearmies 2 1
+CARD
+player2 placearmies 36 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 12 1
+CARD
+player1 placearmies 39 1
+CARD
+player2 placearmies 30 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 12 1
+CARD
+player1 placearmies 39 1
+CARD
+player2 placearmies 36 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 5 1
+CARD
+player1 placearmies 2 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 10 1
+CARD
+player3 placearmies 22 1
+CARD
+player1 placearmies 2 1
+CARD
+player2 placearmies 28 1
+CARD
+player4 placearmies 21 1
+CARD
+player3 placearmies 24 1
+CARD
+player1 placearmies 39 1
+CARD
+player2 placearmies 29 1
+CARD
+player4 placearmies 21 1
+CARD
+player3 placearmies 24 1
+player3 placearmies 24 1
+player3 placearmies 12 1
+player3 attack 24 23
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 2 2 3
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 1 1 0 3
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 4 3 2
+player3 endattack
+player3 nomove
+CARD 30
+player1 placearmies 2 1
+player1 placearmies 2 1
+player1 placearmies 39 1
+player1 attack 40 42
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 5 2 3 3 2
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 0 3
+player1 move 3
+player1 attack 42 41
+player1 roll 2
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 2 3 4 0 5 4 2
+player1 endattack
+player1 nomove
+CARD 3
+player2 placearmies 1 1
+player2 placearmies 36 1
+player2 placearmies 29 1
+player2 attack 29 33
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 4 0 4 3 3
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 1 1 0 5
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 5 3 1
+player2 move 9
+player2 attack 36 35
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 4 1 2 0 0
+player2 move 5
+player2 attack 35 27
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 0 5
+player2 retreat
+player2 attack 35 27
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 3 0 4
+player2 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 1 0 2
+player2 roll 1
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 1 1 5 4
+player2 endattack
+player2 nomove
+CARD 32
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 attack 21 20
+player4 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 3 3 1
+player4 attack 10 11
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 2 2 5
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 2 0 4
+player4 move 3
+player4 endattack
+player4 nomove
+CARD 5
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 attack 12 21
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 1 0 0
+player3 move 10
+player3 attack 23 25
+player3 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 4 1 4
+player3 roll 1
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 1 1 2 4
+player3 attack 21 20
+player3 retreat
+player3 endattack
+player3 nomove
+CARD 15
+player1 placearmies 2 1
+player1 placearmies 2 1
+player1 placearmies 2 1
+player1 attack 2 3
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 3 0 3
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 1 1 5
+player1 retreat
+player1 attack 2 7
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 2 1 5
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 0 0 5
+player1 retreat
+player1 attack 4 9
+player1 roll 1
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 1 1 5 3
+player1 endattack
+player1 nomove
+CARD wildcard
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 36 1
+player2 placearmies 36 1
+player2 attack 36 37
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 3 4
+player2 attack 37 38
+player2 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 5 3 3
+player2 attack 38 34
+player2 roll 1
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 1 1 4 5
+player2 endattack
+player2 nomove
+CARD 24
+player4 placearmies 11 1
+player4 placearmies 11 1
+player4 attack 11 13
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 5 3 3
+player4 move 4
+player4 attack 13 12
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 1 0 5
+player4 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 2 0 2
+player4 roll 1
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 1 1 5 3
+player4 endattack
+player4 movearmies 10 12 1
+CARD 36
+player3 placearmies 23 1
+player3 placearmies 23 1
+player3 placearmies 23 1
+player3 attack 23 25
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 1 1 0 1
+player3 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 4 1 0
+player3 endattack
+player3 nomove
+CARD 25
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 attack 2 3
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 0 0 0
+player1 move 3
+player1 attack 4 7
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 1 1 2
+player1 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 5 0 3
+player1 endattack
+player1 movearmies 3 4 2
+CARD 18
+player2 placearmies 1 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 attack 38 34
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 1 1 1
+player2 endattack
+player2 movearmies 1 38 2
+CARD 40
+player4 placearmies 12 1
+player4 placearmies 20 1
+player4 placearmies 20 1
+player4 placearmies 20 1
+player4 attack 20 31
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 1 0 0 5 4 4
+player4 roll 1
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 1 3 3 3 2 2
+player4 endattack
+player4 nomove
+CARD
+player3 placearmies 22 1
+player3 placearmies 22 1
+player3 placearmies 22 1
+player3 placearmies 22 1
+player3 placearmies 22 1
+player3 placearmies 22 1
+player3 attack 22 31
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 3 0 4 4 0
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 1 1 5 5 2
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 4 2 5 3 1
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 4 4 0 5 0
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 2 1 2
+player3 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 5 3 4
+player3 endattack
+player3 movearmies 21 22 5
+CARD 33
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 attack 4 5
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 2 2 1 5 3 2
+player1 retreat
+player1 attack 2 1
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 0 0 4
+player1 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 5 3 1
+player1 endattack
+player1 movearmies 7 4 1
+CARD 21
+player2 trade 32 24 40
+player2 placearmies 28 1
+player2 placearmies 28 1
+player2 placearmies 30 1
+player2 placearmies 30 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 placearmies 32 1
+player2 attack 32 31
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 4 3 0 5 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 1 1 4
+player2 move 11
+player2 endattack
+player2 nomove
+CARD 23
+player4 placearmies 15 1
+player4 placearmies 15 1
+player4 placearmies 15 1
+player4 placearmies 15 1
+player4 attack 15 14
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 1 5
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 1 0 2
+player4 attack 14 6
+player4 roll 2
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 2 1 5 2 2
+player4 endattack
+player4 nomove
+CARD 16
+player3 trade 15 25 33
+player3 placearmies 22 1
+player3 placearmies 22 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 placearmies 19 1
+player3 attack 19 18
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 0 0 3
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 4 3
+player3 move 5
+player3 endattack
+player3 nomove
+CARD 2
+player1 trade 3 wildcard 21
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 4 1
+player1 placearmies 8 1
+player1 placearmies 8 1
+player1 placearmies 8 1
+player1 placearmies 8 1
+player1 placearmies 8 1
+player1 placearmies 8 1
+player1 placearmies 8 1
+player1 placearmies 8 1
+player1 placearmies 4 1
+player1 placearmies 8 1
+player1 attack 4 5
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 2 0 5 3 0
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 3 2 4 2 0
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 4 1 5
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 2 2 4
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 5 0 3
+player1 move 6
+player1 attack 8 6
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 2 2 0 5 0
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 3 0 0
+player1 move 8
+player1 endattack
+player1 nomove
+CARD 13
+player2 placearmies 38 1
+player2 placearmies 33 1
+player2 placearmies 33 1
+player2 placearmies 33 1
+player2 placearmies 28 1
+player2 placearmies 31 1
+player2 placearmies 30 1
+player2 placearmies 30 1
+player2 placearmies 30 1
+player2 placearmies 30 1
+player2 placearmies 30 1
+player2 attack 28 16
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 0 0 4
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 5 4 5
+player2 retreat
+player2 attack 30 16
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 3 0 4
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 2 1 2
+player2 move 6
+player2 endattack
+player2 movearmies 28 16 2
+CARD 35
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 attack 41 42
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 2 0 4
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 1 1
+player4 move 3
+player4 endattack
+player4 nomove
+CARD 19
+player3 placearmies 18 1
+player3 placearmies 18 1
+player3 placearmies 18 1
+player3 placearmies 18 1
+player3 placearmies 18 1
+player3 placearmies 18 1
+player3 attack 18 15
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 3 1 4
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 2 2 1
+player3 move 5
+player3 attack 21 20
+player3 retreat
+player3 attack 19 20
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 1 0 2
+player3 move 4
+player3 endattack
+player3 movearmies 21 20 2
+CARD 8
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 39 1
+player1 placearmies 40 1
+player1 placearmies 39 1
+player1 placearmies 40 1
+player1 placearmies 5 1
+player1 attack 39 41
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 1 0 5 2 1
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 2 0 3 1 0
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 0 0 5
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 5 3 2
+player1 move 3
+player1 attack 40 42
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 3 1 1 5 4 3
+player1 roll 2
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 2 3 4 2 4 3 1
+player1 attack 41 42
+player1 roll 2
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 2 3 4 2 5 3 1
+player1 endattack
+player1 nomove
+CARD 22
+player2 placearmies 33 1
+player2 placearmies 33 1
+player2 placearmies 33 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 attack 33 39
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 2 1 0 5 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 5 5 0 1 0
+player2 move 12
+player2 attack 39 41
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 1 2
+player2 move 11
+player2 attack 41 42
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 1 0 5 2 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 3 2 4 2 0
+player2 move 7
+player2 attack 42 40
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 2 1 1
+player2 move 6
+player2 endattack
+player2 movearmies 40 39 5
+CARD 14
+player4 trade 5 16 19
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 placearmies 10 1
+player4 attack 10 5
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 0 0 0 2 1 1
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 3 2 5 5 0
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 2 1 5 4 1
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 3 2 1 5 4 3
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 3 2 5 4 2
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 1 0 5 4 3
+player4 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 3 3 1 5 5 4
+player4 roll 2
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 2 3 5 1 3 1 0
+player4 roll 1
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 1 3 0 3 3 2
+player4 attack 12 21
+player4 roll 2
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 2 3 5 3 3 3 1
+player4 roll 1
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 1 2 2 5 3
+player4 endattack
+player4 nomove
+CARD
+player3 placearmies 21 1
+player3 placearmies 21 1
+player3 placearmies 21 1
+player3 placearmies 21 1
+player3 placearmies 21 1
+player3 placearmies 21 1
+player3 attack 21 12
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 0 1
+player3 move 7
+player3 endattack
+player3 nomove
+CARD 28
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 placearmies 5 1
+player1 attack 5 10
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 2 3
+player1 move 15
+player1 endattack
+player1 nomove
+CARD 4
+player2 placearmies 38 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 attack 16 15
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 4 1 2 1 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 2 1 5 2 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 1 0 3 2 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 5 4 1 5 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 0 0 4
+player2 move 3
+player2 attack 16 18
+player2 retreat
+player2 endattack
+player2 movearmies 16 15 3
+CARD 39
+player4 placearmies 11 1
+player4 endattack
+player4 nomove
+CARD
+player3 trade 30 8 28
+player3 placearmies 22 1
+player3 placearmies 22 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 placearmies 12 1
+player3 attack 12 11
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 5 2 1 2 0
+player3 move 9
+player3 endattack
+player3 movearmies 18 20 4
+CARD 11
+player1 trade 13 22 4
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 placearmies 6 1
+player1 attack 6 14
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 2 2
+player1 move 17
+player1 attack 14 17
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 2 1 1
+player1 move 16
+player1 attack 17 19
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 5 0 1
+player1 move 15
+player1 attack 19 21
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 2 1 0
+player1 move 14
+player1 attack 21 23
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 1 1
+player1 move 13
+player1 attack 23 24
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 2 2 2
+player1 move 12
+player1 attack 24 26
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 0 0 1
+player1 move 11
+player1 attack 26 25
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 4 1 0 3 2
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 0 3
+player1 move 9
+player1 endattack
+player1 movearmies 25 23 8
+CARD 7
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 15 1
+player2 placearmies 16 1
+player2 placearmies 31 1
+player2 placearmies 16 1
+player2 placearmies 15 1
+player2 attack 16 18
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 1 0 5
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 0 5
+player2 retreat
+player2 attack 15 18
+player2 retreat
+player2 attack 15 18
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 1 0 4
+player2 move 13
+player2 endattack
+player2 movearmies 16 15 5
+CARD 27
+player3 placearmies 11 1
+player3 attack 11 13
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 2 1 3
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 2 1 4
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 2 1 4
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 0 2
+player3 move 3
+player3 endattack
+player3 movearmies 13 11 2
+CARD 38
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 placearmies 10 1
+player1 attack 10 11
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 1 0 3 2 1
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 3 2 1 4 2 1
+player1 retreat
+player1 attack 10 12
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 2 0 0 5 4 0
+player1 retreat
+player1 attack 10 11
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 2 0 4 2 1
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 1 1 5 5 3
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 1 1 5 5 0
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 4 0 5 3 0
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 5 1 0 3 1
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 2 1 1
+player1 move 13
+player1 attack 11 13
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 0 0 3
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 1 0 4
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 2 2
+player1 move 3
+player1 attack 11 12
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 2 1 3 3 0
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 2 1 0 3 2 1
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 3 3 2 5 3 2
+player1 endattack
+player1 movearmies 23 21 8
+CARD 42
+player2 trade 23 14 27
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 15 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 16 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 placearmies 38 1
+player2 attack 38 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 5 5 3 5 5
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 5 3 3 1 1
+player2 move 11
+player2 attack 1 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 2 0 2
+player2 move 10
+player2 attack 2 3
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 1 1 1
+player2 move 9
+player2 attack 15 17
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 3 3
+player2 move 10
+player2 attack 17 14
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 1 1
+player2 move 9
+player2 attack 14 6
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 3 2 1
+player2 move 8
+player2 attack 18 20
+player2 retreat
+player2 attack 18 19
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 3 5
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 0 0 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 1 1 5
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 0 0 0
+player2 move 9
+player2 attack 6 8
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 1 0 0 3
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 4 1 1
+player2 move 6
+player2 attack 8 7
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 3 3 1
+player2 move 5
+player2 attack 3 4
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 2 0 1
+player2 move 8
+player2 attack 7 9
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 1 1 4
+player2 retreat
+player2 attack 4 9
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 2 0 0
+player2 move 7
+player2 attack 9 5
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 1 0 3
+player2 move 6
+player2 endattack
+player2 movearmies 16 18 10
+CARD 41
+player3 placearmies 12 1
+player3 attack 12 11
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 2 0 0
+player3 move 10
+player3 attack 11 13
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 3 3 3 2 0
+player3 move 3
+player3 attack 11 10
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 0 5
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 3 1
+player3 move 5
+player3 endattack
+player3 movearmies 20 22 9
+CARD 34
+player1 placearmies 21 1
+player1 attack 21 12
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 2 1 2
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 3 3 1 0
+player1 move 8
+player1 attack 12 13
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 3 2 5 2 2
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 2 2 0 5 2
+player1 roll 3
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 3 2 5 1 1 5 3
+player1 roll 1
+ip-172-31-6-90#7854981771847982080 roll 2
+DICE 1 2 2 2 0
+player1 endattack
+player1 nomove
+CARD 6
+player2 trade 35 39 41
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 5 1
+player2 placearmies 5 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 placearmies 31 1
+player2 attack 16 20
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 5 1 5
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 4 3 1
+player2 move 8
+player2 attack 31 22
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 2 1 5 3 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 2 1 5 4 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 1 0 4 4 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 2 1 4 0 0
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 3 1 3 3 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 3 0 4 2 2
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 4 0 5 0 0
+player2 retreat
+player2 attack 5 10
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 0 0 5 4 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 4 0 4 4 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 5 3 1 5 4 0
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 3 1 5 2 1
+player2 roll 3
+ip-172-31-6-90#7854981771847982080 roll 3
+DICE 3 3 4 4 0 4 4 0
+player2 retreat
+player2 endattack
+player2 movearmies 32 31 2
+CARD 9
+player3 trade 11 38 34
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 placearmies 13 1
+player3 attack 13 12
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 4 1 1
+player3 move 12
+player3 attack 12 21
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 1 2
+player3 move 11
+player3 attack 21 23
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 1 0 0
+player3 move 10
+player3 attack 23 24
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 2 2 1 5
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 4 3 0 5
+player3 roll 3
+ip-172-31-6-90#7854981771847982080 roll 1
+DICE 3 1 5 3 2 2
+player3 move 7
+player3 endattack
+player3 movearmies 24 22 6
+CARD 20
+player1 endtrade
+RENAME newName=LolloCausto&newType=0&oldName=xi+ji+ping+pong&newAddress=player4
+Big-M1-MacBook-Pro.local#8570570171136544768 endgo
+CARD 
+Big-M1-MacBook-Pro.local#8570570171136544768 placearmies 19 5
+Big-M1-MacBook-Pro.local#8570570171136544768 placearmies 20 11
+Big-M1-MacBook-Pro.local#8570570171136544768 placearmies 19 13
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 19 21
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 1 1 0 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 26
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 5 10
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 4 3 1 3 2 1 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 5 3 2 3 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 13
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 10 11
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 3 1 0 4 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 2 1 0 5 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 5 4 1 2 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 7
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 21 12
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 5 3 3 4 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 4
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 21 23
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 3 2 0 2 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 19
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 23 24
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 4 4 2 4 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 2 1 1 5 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 2 1 0 1 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 14
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 23 25
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 2
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 2 1 3 3 2 
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 24 26
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 3 1 1 1 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 3
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 11 13
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 3 2 1 4 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 3 3 0 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 3
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 20 22
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 5 5 2 5 2 1 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 3 3 2 5 1 1 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 4 1 1 2 2 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 4 3 2 5 5 3 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 4 4 0 3 3 2 
+Big-M1-MacBook-Pro.local#8570570171136544768 retreat
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 31 22
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 5 5 0 3 0 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 2 2 1 4 3 1 
+Big-M1-MacBook-Pro.local#8570570171136544768 retreat
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 24 22
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 5 3 1 3 1 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 4 0 0 5 3 2 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 5 2 0 3 3 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 4 4 1 4 1 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+DICE 3 3 5 2 0 5 1 0 
+Big-M1-MacBook-Pro.local#8570570171136544768 retreat
+Big-M1-MacBook-Pro.local#8570570171136544768 attack 31 22
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 2
+DICE 3 2 2 2 2 4 4 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 2
+DICE 3 2 5 3 2 4 3 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 5 3 2 5 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 3 3 2 4 
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 3
+Big-M1-MacBook-Pro.local#8570570171136544768 roll 1
+DICE 3 1 5 5 2 1 
+Big-M1-MacBook-Pro.local#8570570171136544768 move 3

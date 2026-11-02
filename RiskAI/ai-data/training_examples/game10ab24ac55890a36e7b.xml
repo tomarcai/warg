@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<player name="frame1" color="black" type="AI (Framework)">
+		<mission>
+			North-America,Australia
+		</mission>
+	</player>
+	<player name="hard2" color="red" type="AI (Hard)">
+		<mission>
+			kill blue
+		</mission>
+	</player>
+	<player name="frame3" color="green" type="AI (Framework)">
+		<mission>
+			kill white
+		</mission>
+	</player>
+	<player name="easy4" color="blue" type="AI (Easy)">
+		<mission>
+			Europe,South-America,random
+		</mission>
+	</player>
+	<player name="hard5" color="yellow" type="AI (Hard)">
+		<mission>
+			Asia,South-America
+		</mission>
+	</player>
+	<player name="hard6" color="white" type="AI (Hard)">
+		<mission>
+			24
+		</mission>
+	</player>
+	<winner>
+		yellow
+	</winner>
+	<statistics>
+		<time_used>
+			1174.639
+		</time_used>
+		<rounds_played>
+			10
+		</rounds_played>
+		<board_states_saved>
+			232
+		</board_states_saved>
+		<module_runs_saved>
+			414
+		</module_runs_saved>
+	</statistics>
+</game>

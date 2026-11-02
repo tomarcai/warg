@@ -1,0 +1,14 @@
+importanceThreshold_18w2=0.8
+attackProbabilityOfWinning=0.35
+attackProbabilityOfWinning_lastTerritory=0.25
+attackProbabilityOfWinning_closeToWinning=0.05
+attackProbabilityOfWinning_threshold=0.8
+attackProbabilityOfWinning_riskCard=0.4
+attackEstimatedCostExceed=0.25
+discardAttackPlanPriority=0.2
+roundsToPredict=5
+otherArmiesFactor=0.2
+saveTrainingExample=false
+saveWinnerFile=false
+saveFullGameStats=false
+trainedAIModelsDirectory=ai-data/trained_models/

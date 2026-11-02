@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!--
+	Game izPack installer description file
+
+	Contains the description to generate a java-based installation .jar file
+	for the game
+
+	@author Christian Weiske <cweiske@cweiske.de>
+-->
+<izpack:installation version="5.0"
+                     xmlns:izpack="http://izpack.org/schema/installation"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+
+	<info>
+		<appname>@game.name@</appname>
+		<appversion>@game.version@</appversion>
+		<authors>
+			<author name="Yura Mamyrin" email="yura@yura.net"/>
+			<author name="Christian Weiske" email="cweiske@cweiske.de"/>
+			<author name="Mike Chaten" email="colbertff@gmail.com"/>
+			<author name="And many others! Thank you!" email=""/>
+		</authors>
+		<url>@game.website@</url>
+		<run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>
+		<!-- izpack.macinstall is needed for non-admin mac users, but most mac users are admins -->
+
+		<!-- installationinformation upgrade from version 4.3.5 to version 5.1.3 is broken
+		     So this needs to be disabled so we can update from <= Game1.2.3 to >= Game1.2.4 -->
+		<readinstallationinformation>false</readinstallationinformation>
+		<writeinstallationinformation>false</writeinstallationinformation>
+	</info>
+
+	<guiprefs width="640" height="480" resizable="yes"/>
+
+	<locale>
+                <langpack iso3="eng"/> <!-- The English langpack (default) -->
+
+                <!-- <langpack iso3="bgr"/>  The Bulgarian langpack (not supported by game) -->
+                <langpack iso3="bra"/> <!-- The Brazilian Portuguese langpack -->
+                <langpack iso3="cat"/> <!-- The Catalan langpack -->
+                <langpack iso3="ces"/> <!-- The Czech langpack -->
+                <langpack iso3="chn"/> <!-- The Simplified Chinese langpack -->
+                <langpack iso3="dan"/> <!-- The Danish langpack -->
+                <langpack iso3="deu"/> <!-- The German langpack -->
+                <langpack iso3="ell"/> <!-- The Greek langpack -->
+                <!-- <langpack iso3="eus"/>  The Basque langpack (not supported by game) -->
+                <!-- <langpack iso3="fa"/>  The Persian langpack (not supported by game) -->
+                <langpack iso3="fin"/> <!-- The Finnish langpack -->
+                <langpack iso3="fra"/> <!-- The French langpack -->
+                <langpack iso3="glg"/> <!-- The Galician langpack -->
+                <!--<langpack iso3="hun"/>  The Hungarian langpack (not supported by game) -->
+                <!--<langpack iso3="idn"/>  The Indonesian langpack (not supported by game) -->
+                <langpack iso3="ita"/> <!-- The Italian langpack -->
+                <!--<langpack iso3="jpn"/>  The Japanese langpack (not supported by game) -->
+                <!--<langpack iso3="kor"/>  The Korean langpack (not supported by game) -->
+                <!--<langpack iso3="msa"/>  The Bahasa Malaysia langpack (not supported by game) -->
+                <langpack iso3="nld"/> <!-- The Dutch langpack -->
+                <!--<langpack iso3="nor"/>  The Norwegian langpack (not supported by game) -->
+                <langpack iso3="pol"/> <!-- The Polish langpack -->
+                <langpack iso3="prt"/> <!-- The Portuguese langpack -->
+                <!--<langpack iso3="ron"/>  The Romanian langpack (not supported by game) -->
+                <langpack iso3="rus"/> <!-- The Russian langpack -->
+                <langpack iso3="slk"/> <!-- The Slovak langpack -->
+                <langpack iso3="spa"/> <!-- The Spanish langpack -->
+                <langpack iso3="srp"/> <!-- The Serbian langpack -->
+                <langpack iso3="swe"/> <!-- The Swedish langpack -->
+                <langpack iso3="tur"/> <!-- The Turkish langpack -->
+                <langpack iso3="twn"/> <!-- The Tradional Chinese langpack -->
+                <langpack iso3="ukr"/> <!-- The Ukrainian langpack -->
+
+                <!-- <langpack iso3="lav"/> Latvian not supported by izpack -->
+	</locale>
+
+	<!--
+		The resources section.
+		The ids must be these ones if you want to use the LicencePanel and/or the InfoPanel.
+	-->
+	<resources>
+                <res id="installer.langsel.img" src="../../game/@game.name@/jar/net/yura/domination/guishared/logo.png"/>
+            
+		<res id="LicencePanel.licence" src="../../build/game/gpl.txt"/>
+		<res id="InfoPanel.info" src="../../build/game/ReadMe.txt"/>
+
+		<!-- packs translation files -->
+		<res id="packsLang.xml_deu" src="../../installer/izpack/packsLang.xml_deu"/>
+		<res id="packsLang.xml_glg" src="../../installer/izpack/packsLang.xml_glg"/>
+
+		<!-- desktop shortcuts -->
+		<res id="shortcutSpec.xml" src="../../build/shortcutSpec.xml"/>
+		<res id="Unix_shortcutSpec.xml" src="../../build/Unix_shortcutSpec.xml"/>
+	</resources>
+
+	<!--
+		The panels section.
+		We indicate here which panels we want to use. The order will be respected.
+	-->
+	<panels>
+		<panel classname="HelloPanel"/>
+		<!--<panel classname="InfoPanel"/>-->
+		<panel classname="LicencePanel"/><!-- DOES NOT WORK IN JAVA 1.4 -->
+		<panel classname="TargetPanel"/><!-- installation path -->
+		<panel classname="PacksPanel"/>
+		<panel classname="InstallPanel"/>
+		<panel classname="ShortcutPanel" condition="!izpack.macinstall"/>
+		<panel classname="FinishPanel"/>
+	</panels>
+
+	<!--
+		The packs section.
+		We specify here our packs.
+	-->
+	<packs>
+		<pack name="Game base files" required="yes" id="package.base">
+			<description>Contains all the files and maps required to run the game</description>
+
+                        <!-- override default is "update", but this prevents downgrades from working -->
+			<fileset dir="." targetdir="$INSTALL_PATH" excludes="help/**,src.zip,*.cmd,*.exe,*.sh,*.command,*.app/**,game.ini" override="true"/>
+			<fileset dir="." targetdir="$INSTALL_PATH" includes="game.ini" override="false"/>
+
+			<fileset dir="." targetdir="$INSTALL_PATH" os="windows" includes="*.cmd,*.exe"/>
+			<fileset dir="." targetdir="$INSTALL_PATH" os="unix" includes="*.sh"/>
+			<fileset dir="." targetdir="$INSTALL_PATH" os="mac" includes="mac.command,*.app/**"/>
+			<fileset dir="." targetdir="$INSTALL_PATH" os="mac" includes="**/._*" defaultexcludes="false"/>
+
+			<!-- set the executable flag on unix -->
+
+			<executable stage="never" targetfile="$INSTALL_PATH/run.sh" os="unix"/>
+			<executable stage="never" targetfile="$INSTALL_PATH/CommandLine.sh" os="unix"/>
+			<executable stage="never" targetfile="$INSTALL_PATH/GameGUI.sh" os="unix"/>
+			<executable stage="never" targetfile="$INSTALL_PATH/Increment1GUI.sh" os="unix"/>
+			<executable stage="never" targetfile="$INSTALL_PATH/SimpleGUI.sh" os="unix"/>
+			<executable stage="never" targetfile="$INSTALL_PATH/SwingGUI.sh" os="unix"/>
+
+			<executable stage="never" targetfile="$INSTALL_PATH/Domination.app/Contents/MacOS/universalJavaApplicationStub" os="mac"/>
+			<executable stage="never" targetfile="$INSTALL_PATH/Map Editor.app/Contents/MacOS/universalJavaApplicationStub" os="mac"/>
+			<executable stage="postinstall" targetfile="$INSTALL_PATH/mac.command" os="mac"/>
+
+		</pack>
+
+		<pack name="Manual" required="no" id="package.manual">
+			<description>The program manual and documentation</description>
+			<fileset dir="help" targetdir="$INSTALL_PATH/help"/>
+		</pack>
+
+		<pack name="Sources" required="no" id="package.source">
+			<description>The java source files</description>
+			<file src="src.zip" targetdir="$INSTALL_PATH"/>
+		</pack>
+	</packs>
+
+	<!-- needed for shortcuts -->
+        <natives>
+            <native type="izpack" name="ShellLink.dll">
+              <os family="windows" />
+            </native>
+            <native type="izpack" name="ShellLink_x64.dll">
+              <os family="windows" />
+            </native>
+        </natives>
+
+</izpack:installation>

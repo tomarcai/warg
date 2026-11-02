@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block body_class %}applist{% endblock %}
+{%  block content %}
+
+<ul>
+    <li>
+    <a class="noeffect" href="/maps">
+    <span class="image" style="background-image:
+    url('')">
+    </span>
+    <span class="name">All</span>
+    </a>
+    </li>
+{% if category_tuples %}
+
+    {% for category, map in category_tuples %}
+        <li>
+		<a class="noeffect" href="/maps?category={{ category.id }}">
+		<span class="image" style="background-image:
+		    url('{% if category.icon %}{{ category.icon.url }}{% else %}{% if map.imageFile %}{% thumbnail map.imageFile 150x94 crop as im %}{{ im.url }}{% endif %}{% endif %}')">
+        </span>
+        <span class="name">{{ category.name }}</span>
+
+        </a>
+        </li>
+
+    {% endfor %}
+
+{% endif %}
+
+</ul>
+{% endblock %}

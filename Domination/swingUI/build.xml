@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Domination" default="jar" basedir=".">
+	<!--
+		Domination ant build file
+		http://domination.sourceforge.net
+		@author Yura Mamyrin <yura@yura.net>
+		@author Christian Weiske <cweiske@cweiske.de>
+	-->
+	<description>
+		This ant build file contains all the necessary information
+		to compile the Game classes, manual files and to generate
+		distribution files
+	</description>
+	    <!-- this is needed for running the junit test in netbeans -->
+        <import file="nbproject/build-impl.xml"/>
+        
+        <property file="local.properties" />
+
+	<property name="game.version" value="1.3.6"/>
+
+        <!--
+            For releasing we want to be compatible wth as many versions of java as possible
+            as the game requires little system resources and can run on very old computers
+            to support java 1.5 we MUST build wth java 1.8, java 9 can ONLY build for java 1.6+.
+
+            For development you can put any value here, if you use jdk 17 then put 17
+        -->
+        <property name="source.version" value="1.5"/>
+
+        <!-- -->
+	<property name="game.name" value="Domination"/>
+	<property name="game.website" value="http://domination.sf.net/"/>
+	<property name="game.defaultmap" value="luca.map"/>
+	<property name="game.defaultcards" value="risk.cards"/>
+        <!-- -->
+
+	<!-- - ->
+	<property name="game.name" value="Risk"/>
+	<property name="game.website" value="http://risk.sf.net/"/>
+	<property name="game.defaultmap" value="board.map"/>
+	<property name="game.defaultcards" value="risk.cards"/>
+	<!- - -->
+
+	<filter token="game.version" value="${game.version}"/>
+	<filter token="game.name" value="${game.name}"/>
+        <filter token="game.website" value="${game.website}"/>
+        <filter token="game.defaultmap" value="${game.defaultmap}"/>
+        <filter token="game.defaultcards" value="${game.defaultcards}"/>
+
+	<property name="dir.build" location="build"/>
+	<property name="dir.build.classes" location="${dir.build}/classes"/>
+	<property name="dir.build.manual" location="${dir.build}/manual"/>
+	<!-- all required dirs and files will be copied to there before packing the zip -->
+	<property name="dir.build.game" location="${dir.build}/game"/>
+	<property name="dir.oldmanual" location="${basedir}/game/${game.name}/help"/>
+	<property name="dir.dist" location="dist"/>
+	<property name="dir.sources" location="../src:src:../sharedUI/src_mapstore_lobby"/>
+        <property name="dir.properties" location="../src"/>
+        <property name="dir.libs" location="lib/httpmime-4.1.2.jar;lib/httpcore-4.1.2.jar;lib/jnlp.jar;lib/TranslationTool.jar;lib/SwingME.jar;lib/midletrunner.jar;lib/Grasshopper.jar;lib/LobbyClient.jar;../sharedUI/lib/MiniLobbyClient.jar;lib/jfreechart-1.0.15.jar;lib/jcommon-1.0.18.jar;lib/jlayer-1.0.1.4.jar;lib/mp3spi-1.9.5.4.jar;lib/tritonus-share-0.3.7.4.jar"/>
+
+
+	<property name="file.src" location="${dir.dist}/src.zip"/>
+
+
+        <!-- if the izpack installer jar is available -->
+	<property name="izpack.compiler" value="${basedir}/installer/izpack/standalone-compiler.jar"/>
+	<property name="jsmooth.compiler" value="${basedir}/installer/jsmooth/jsmoothgen-ant.jar"/>
+	<property name="launch4j.dir" location="${basedir}/installer/launch4j" />
+
+        <condition property="izpack.available">
+          <isset property="izpack-dist"/>
+        </condition>
+        
+	<available file="${jsmooth.compiler}" property="jsmooth.available"/>
+	<available file="${launch4j.dir}/launch4j.jar" property="launch4j.available"/>
+
+
+	<condition property="lobby.available">
+	  <and>
+	    <available file="../lobbyserver/lib/LobbyServer.jar" property="lobby.server.available"/>
+	    <available file="lib/LobbyClient.jar" property="lobby.client.available"/>
+	  </and>
+	</condition>
+
+	<property name="dir.build.lobby.client.classes" location="${dir.build}/lobby/clientclasses"/>
+	<property name="dir.build.lobby.server.classes" location="${dir.build}/lobby/serverclasses"/>
+
+	<property name="dir.lobby.dist.server" location="../../Lobby/dist/server"/>
+	<property name="dir.lobby.dist.client" location="../../Lobby/dist/client"/>
+
+	<available file="${dir.lobby.dist.server}" property="dir.lobby.dist.server.available"/>
+	<available file="${dir.lobby.dist.client}" property="dir.lobby.dist.client.available"/>
+
+
+
+
+
+
+
+
+
+	<target name="classes" description="compiles all the classes">
+
+                <!--
+                    if no special config is set, ant will try and use
+                    /usr/local/opt/openjdk/bin/java
+                -->
+                <echo>Java/JVM version: ${ant.java.version}</echo>
+                <echo>Java/JVM detail version: ${java.version}</echo>
+
+		<mkdir dir="${dir.build.classes}"/>
+                <mkdir dir="${dir.dist}"/>
+
+		<!-- compile the classes -->
+		<javac debug="on" srcdir="${dir.sources}" destdir="${dir.build.classes}"
+		source="${source.version}" target="${source.version}" classpath="${dir.libs}" encoding="Cp1252"/>
+
+                <!-- copy translation files and other shared files -->
+		<copy todir="${dir.build.classes}" filtering="true">
+			<fileset dir="${dir.properties}" includes="**/*.properties"/>
+                        <fileset dir="src" includes="**/*.ini"/>
+                        <fileset dir="../src" includes="META-INF/**"/>
+		</copy>
+
+		<!-- copy images -->
+		<copy todir="${dir.build.classes}">
+			<fileset dir="game/${game.name}/jar" includes="**/*.*"/>
+			<fileset dir="src" includes="**/*.ttf"/>
+		</copy>
+
+<!-- this is how it used to work, but really this is not a very good idea
+                <unzip src="lib/TranslationTool.jar" dest="${dir.build.classes}"/>
+		<unzip src="lib/Grasshopper.jar" dest="${dir.build.classes}"/>
+-->
+
+                <!-- for the map chooser -->
+                <copy todir="${dir.build.classes}">
+        	        <fileset dir="../sharedUI/res_mapstore_lobby" />
+	                <fileset dir="../sharedUI/img_mapstore_lobby/drawable-mdpi" />
+		</copy>
+
+                <!-- for Apple Retina Display -->
+                <mkdir dir="${dir.build.classes}/drawable-xhdpi"/>
+                <copy todir="${dir.build.classes}/drawable-xhdpi">
+	                <fileset dir="../sharedUI/img_mapstore_lobby/drawable-xhdpi" />
+		</copy>
+
+                <copy file="res/images/map.png" todir="${dir.build.classes}/net/yura/domination/ui/increment1gui"/>
+	</target>
+
+	<target name="distribution.jar"
+		description="creates the basic jar file with the classes"
+		depends="classes">
+
+		<jar destfile="${dir.dist}/${game.name}.jar"
+			basedir="${dir.build.classes}"
+			manifest="src/META-INF/MANIFEST.MF"/>
+	</target>
+
+	<target name="game"
+		description="copies all the necessary files for the game to one directory, from which it can be played then"
+		depends="distribution.jar,demo"><!-- ,manual -->
+
+		<mkdir dir="${dir.build.game}"/>
+
+		<copy file="../ChangeLog.txt" todir="${dir.build.game}"/>
+		<copy file="../todo.txt" todir="${dir.build.game}"/>
+		<copy file="../gpl.txt" todir="${dir.build.game}"/>
+
+		<copy file="res/commands.txt" todir="${dir.build.game}" filtering="true"/>
+		<copy file="res/ReadMe.txt" todir="${dir.build.game}" filtering="true"/>
+		<copy file="res/game.ini" todir="${dir.build.game}" filtering="true"/>
+
+<!--		<copy todir="${dir.build.game}/manual">
+			<fileset dir="${dir.build.manual}"/>
+		</copy>-->
+		<copy todir="${dir.build.game}/help">
+			<fileset dir="${dir.oldmanual}"/>
+		</copy>
+
+		<mkdir dir="${dir.build.game}/maps"/>
+		<copy todir="${dir.build.game}/maps">
+			<fileset dir="game/${game.name}/maps" includes="**/*.*"/>
+		</copy>
+
+		<mkdir dir="${dir.build.game}/sound"/>
+		<copy todir="${dir.build.game}/sound">
+			<fileset dir="game/${game.name}/sound" includes="**/*.*" />
+		</copy>
+
+		<mkdir dir="${dir.build.game}/resources"/>
+		<copy todir="${dir.build.game}/resources">
+			<fileset dir="${basedir}/res/icons" includes="**/*.*" />
+		</copy>
+
+		<mkdir dir="${dir.build.game}/saves"/>
+
+		<copy file="${dir.dist}/${game.name}.jar" todir="${dir.build.game}"/>
+                <copy file="${dir.dist}/${game.name}4ME.jar" todir="${dir.build.game}"/>
+
+                <copy todir="${dir.build.game}/lib">
+                	<!-- Desktop libs -->
+			<fileset dir="lib" includes="SwingME.jar,midletrunner.jar,m3gbasic.jar,TranslationTool.jar,Grasshopper.jar,LobbyClient.jar,httpmime-4.1.2.jar,httpcore-4.1.2.jar,jlayer-1.0.1.4.jar,mp3spi-1.9.5.4.jar,tritonus-share-0.3.7.4.jar"/>
+			<fileset dir="../sharedUI/lib" includes="MiniLobbyClient.jar"/>
+		</copy>
+
+
+		<copy todir="${dir.build.game}" filtering="true">
+			<!-- script start files for easy starting -->
+			<fileset dir="${basedir}/res/scripts" includes="*.sh,*.cmd,*.command"/>
+		</copy>
+
+		<copy todir="${dir.build.game}">
+			<!-- Apple OS X Launcher files, these are binary files and can not be filtered -->
+			<fileset dir="${basedir}/res/scripts" includes="*.app/**,*.exe"/>
+			<fileset dir="${basedir}/res/scripts" defaultexcludes="no" includes="**/._*"/>
+		</copy>
+
+		<!-- sadly this is lost when the files are added to the zip file, so is useless
+		<attrib hidden="true">
+			<fileset dir="${dir.build.game}" defaultexcludes="no" includes="**/._*"/>
+		</attrib>
+		-->
+
+		<!-- remember the installer chmod in installer/izpack/install.xml -->
+		<chmod dir="${dir.build.game}" includes="*.sh,*.command,**/universalJavaApplicationStub" perm="ugo+x" />
+
+	</target>
+
+	<target name="game.exe" if="launch4j.available">
+		<taskdef name="launch4j"
+		    classname="net.sf.launch4j.ant.Launch4jTask"
+		    classpath="${launch4j.dir}/launch4j.jar:${launch4j.dir}/lib/xstream.jar" />
+		<launch4j configFile="${launch4j.dir}/my_flash.xml" />
+		<launch4j configFile="${launch4j.dir}/my_swing.xml" />
+	</target>
+
+	<target name="distribution.source.zip"
+		description="creates a zip with all the java files">
+
+		<zip destfile="${file.src}">
+			<fileset dir="${basedir}/.." includes="src*/**/*.java,swingUI/src*/**/*.java,sharedUI/src*/**/*.java,android/src*/**/*.java,ios/src/main/java/net/**/*.java,res/images/ChatServerLayout.gif"/>
+		</zip>
+	</target>
+
+	<target name="distribution.zip"
+		description="creates the normal zip distribution file which includes the jar"
+		depends="game,distribution.source.zip">
+
+		<copy file="${file.src}" todir="${dir.build.game}"/>
+
+		<zip destfile="${dir.dist}/${game.name}_${game.version}.zip">
+ 			<zipfileset dir="${dir.build.game}" prefix="${game.name}" excludes="*.sh,**/universalJavaApplicationStub,mac.command"/>
+			<zipfileset dir="${dir.build.game}" prefix="${game.name}" includes="*.sh,**/universalJavaApplicationStub" filemode="755"/>
+                        <!-- we HAVE to add these last, or when they get extracted on macOS they will not get merged -->
+			<zipfileset dir="${dir.build.game}" prefix="${game.name}" includes="**/._*" defaultexcludes="no"/>
+		</zip>
+	</target>
+
+	<target name="jar"
+		description="generates distribution packages"
+		depends="distribution.zip,distribution.izpack,lobby">
+	</target>
+
+
+
+
+
+
+	<target name="distribution.izpack"
+		description="creates the java-based installer (.jar file)"
+		depends="distribution.izpack.available,distribution.izpack.unavailable"
+	>
+		<!-- just a switch for available and unavailable -->
+	</target>
+
+	<target name="distribution.izpack.available"
+		description="creates the java-based installer (.jar file)"
+		if="izpack.available"
+		>
+
+		<copy todir="${dir.build}" overwrite="true" filtering="true">
+			<fileset dir="${basedir}/installer/izpack" includes="install.xml,shortcutSpec.xml,Unix_shortcutSpec.xml"/>
+		</copy>
+
+		<property name="izpack-installer" value="${dir.dist}/${game.name}_install_${game.version}.jar"/>
+            
+		<path id="lib.path">
+			<fileset dir="${izpack-dist}/lib" includes="*.jar"/>
+		</path>
+
+		<taskdef name="izpack"
+			classname="com.izforge.izpack.ant.IzPackTask"
+			classpathref="lib.path"
+		/>
+
+		<echo message="Makes the installer using IzPack to ${izpack-installer}"/>
+		<izpack input="${dir.build}/install.xml"
+			output="${izpack-installer}"  
+			installerType="standard"              
+			basedir="${dir.build.game}"
+			izPackDir="${izpack-dist}"/>
+		<echo message="${izpack-installer} created"/>
+          
+		<antcall target="distribution.launch4j"/>
+
+	</target>
+
+	<target name="distribution.izpack.unavailable"
+		description="Small notice"
+		unless="izpack.available">
+		<echo>
+The izPack installer is not available on your system.
+Get it from http://izpack.org/downloads/ if you want
+to create the graphical installer.
+create a local.properties file and 
+set "izpack-dist" to point to the izpack install dir
+############################################################
+		</echo>
+	</target>
+        
+        
+        
+        
+        
+
+
+
+	<target name="distribution.launch4j" depends="distribution.launch4j.available,distribution.launch4j.unavailable"/>
+
+	<target name="distribution.launch4j.available"
+		description="Generates a Windows .exe file from the izPack installer"
+		if="launch4j.available">
+
+		<copy todir="${dir.build}" overwrite="true" filtering="true">
+			<fileset dir="${launch4j.dir}" includes="my_install.xml"/>
+		</copy>
+
+		<taskdef name="launch4j"
+		    classname="net.sf.launch4j.ant.Launch4jTask"
+		    classpath="${launch4j.dir}/launch4j.jar:${launch4j.dir}/lib/xstream.jar" />
+		<launch4j configFile="${dir.build}/my_install.xml"/>
+	</target>
+
+	<target name="distribution.launch4j.unavailable"
+		description="Small notice"
+		unless="launch4j.available">
+		<echo>
+The launch4j installer is not available on your system.
+Get it from http://launch4j.sourceforge.net/ if you want
+to create the windows exe installer.
+extract launch4j-3.0.2-win32.zip to
+${basedir}/installer/launch4j/
+############################################################
+		</echo>
+	</target>
+
+
+
+	<target name="distribution.jsmooth" depends="distribution.jsmooth.available,distribution.jsmooth.unavailable"/>
+
+	<target name="distribution.jsmooth.available"
+		description="Generates a Windows .exe file from the izPack installer"
+		if="jsmooth.available">
+
+		<!-- load the ant task -->
+		<taskdef name="jsmoothgen"
+			classname="net.charabia.jsmoothgen.ant.JSmoothGen"
+			classpath="${basedir}/installer/jsmooth/jsmoothgen-ant.jar"/>
+
+		<copy todir="${dir.build}" file="${basedir}/installer/jsmooth/installer.jsmooth" overwrite="true" filtering="true"/>
+
+
+		<!-- compile the exe file -->
+		<jsmoothgen project="${dir.build}/installer.jsmooth"
+		skeletonroot="${basedir}/installer/jsmooth/skeletons"/>
+
+		<move file="${dir.build}/${game.name}_install_${game.version}.exe" todir="${dir.dist}"/>
+
+	</target>
+
+	<target name="distribution.jsmooth.unavailable"
+		description="Small notice"
+		unless="jsmooth.available">
+		<echo>
+The jsmooth installer is not available on your system.
+Get it from http://jsmooth.sourceforge.net/ if you want
+to create the windows exe installer.
+Copy the standalone installer jar to
+${basedir}/installer/jsmooth/jsmoothgen-ant.jar
+############################################################
+		</echo>
+	</target>
+
+
+
+
+
+	<xmlcatalog>
+		<dtd
+			publicId="-//OASIS//DTD DocBook XML V4.2//EN"
+			location="${basedir}/newhelp/dtd/docbookx.dtd"/>
+	</xmlcatalog>
+
+	<target name="manual" description="compiles the manual from docbook into html">
+
+		<mkdir dir="${dir.build.manual}"/>
+		<!-- compile the manual with xmlto -->
+		<exec executable="xmlto" dir="newhelp">
+			<arg value="-o"/>
+			<arg value="${dir.build.manual}/"/>
+			<arg value="xhtml"/>
+			<arg value="manual.xml"/>
+		</exec>
+
+		<!-- compile the frame files -->
+		<!-- the following doesn't really work
+			as xalan wants
+				a) to connect *always* to the net to get the DTDs
+				b) has a problem with "Writing frame_index.html: Bad file descriptor Cause: java.io.IOException"
+		<xslt basedir="newhelp" destdir="${dir.build.manual}"
+			style="newhelp/xslt/frames.xsl" includes="manual.xml" />
+		-->
+		<exec executable="xsltproc" dir="newhelp">
+			<arg value="-o"/>
+			<arg value="${dir.build.manual}/"/>
+			<arg value="xslt/frames.xsl"/>
+			<arg value="manual.xml"/>
+		</exec>
+	</target>
+
+
+
+
+        <!-- ###################################################################
+        ############################### LOBBY ##################################
+        #################################################################### -->
+
+	<target name="lobby"
+		description="creates Game lobby jar"
+		depends="distribution.lobby.available,distribution.lobby.unavailable"
+	>
+		<!-- just a switch for available and unavailable -->
+	</target>
+
+	<target name="distribution.lobby.unavailable"
+		description="Small notice"
+		unless="lobby.available">
+		<echo>
+Lobby jars not found!!
+----------------------
+Please put the LobbyServer.jar and LobbyClient.jar file here
+if you want to build the Lobby version
+get them by checking out the Lobby Project
+svn co https://lobby.svn.sourceforge.net/svnroot/lobby/trunk
+############################################################
+		</echo>
+	</target>
+
+	<target name="distribution.lobby.available"
+		description="make Lobby game jars"
+		if="lobby.available">
+
+		<antcall target="lobby.client.jars"/>
+		<antcall target="lobby.server.jars"/>
+
+	</target>
+
+	<target name="lobby.client.classes">
+
+		<!-- compile CLIENT -->
+
+		<mkdir dir="${dir.build.lobby.client.classes}"/>
+
+		<javac debug="on" srcdir="${dir.sources}" destdir="${dir.build.lobby.client.classes}" includes="net/yura/domination/lobby/client/**,net/yura/domination/engine/ai/**"
+		source="${source.version}" target="${source.version}" classpath="${dir.libs}" encoding="Cp1252"/>
+
+                <!-- copy translation files and other shared files -->
+		<copy todir="${dir.build.lobby.client.classes}" filtering="true">
+			<fileset dir="${dir.properties}" includes="**/*.properties"/>
+                        <fileset dir="src" includes="**/*.ini"/>
+                        <fileset dir="../src" includes="META-INF/**"/>
+		</copy>
+
+		<!-- copy images -->
+		<copy todir="${dir.build.lobby.client.classes}">
+			<fileset dir="game/${game.name}/jar" includes="**/lobby/client/*.*,**/guishared/*.*,**/flashgui/*.*" excludes="**/flashgui/joingame.jpg,**/flashgui/menu.jpg,**/flashgui/earth.gif"/>
+			<fileset dir="../sharedUI/img_mapstore_lobby/drawable-mdpi" includes="ms_download.png,ms_strip.png,color_*.png"/>
+                        <fileset dir="src" includes="**/*.ttf"/>
+		</copy>
+
+		<!-- used for getting the map preview icon -->
+		<unzip src="lib/SwingME.jar" dest="${dir.build.lobby.client.classes}"/>
+		<unzip src="lib/midletrunner.jar" dest="${dir.build.lobby.client.classes}"/>
+                <unzip src="lib/m3gbasic.jar" dest="${dir.build.lobby.client.classes}"/> <!-- resize and save local map preview icons -->
+
+	</target>
+
+	<target name="lobby.server.classes">
+
+		<!-- compile SERVER -->
+
+		<mkdir dir="${dir.build.lobby.server.classes}"/>
+
+		<javac debug="on" srcdir="../src:../lobbyserver/src:../sharedUI/src_mapstore_lobby" destdir="${dir.build.lobby.server.classes}" includes="net/yura/domination/lobby/server/**,net/yura/domination/engine/ai/**"
+		source="1.8" target="1.8" classpath="../lobbyserver/lib/LobbyServer.jar:lib/SwingME.jar:lib/midletrunner.jar" encoding="Cp1252"/>
+
+                <!-- copy translation files and other shared files -->
+		<copy todir="${dir.build.lobby.server.classes}" filtering="true">
+			<fileset dir="${dir.properties}" includes="**/*.properties"/>
+                        <fileset dir="src" includes="**/*.ini"/>
+                        <fileset dir="../src" includes="META-INF/**"/>
+		</copy>
+
+		<unzip src="lib/SwingME.jar" dest="${dir.build.lobby.server.classes}"/>
+		<unzip src="lib/midletrunner.jar" dest="${dir.build.lobby.server.classes}"/>
+
+	</target>
+
+	<target name="lobby.client.jars" depends="lobby.client.classes">
+
+		<!-- MAKE CLIENT -->
+
+		<jar destfile="${dir.dist}/${game.name}Client.jar" basedir="${dir.build.lobby.client.classes}"/>
+
+		<antcall target="lobby.client.dist"/>
+	</target>
+
+	<target name="lobby.server.jars" depends="lobby.server.classes">
+
+		<!-- MAKE SERVER -->
+
+		<jar destfile="${dir.dist}/${game.name}Server.jar" basedir="${dir.build.lobby.server.classes}"/>
+
+		<antcall target="lobby.server.dist"/>
+	</target>
+
+
+	<target name="lobby.client.dist" if="dir.lobby.dist.client.available">
+
+		<copy file="${dir.dist}/${game.name}Client.jar" todir="${dir.lobby.dist.client}/${game.name}"/>
+
+		<copy todir="${dir.lobby.dist.client}/${game.name}/maps">
+			<fileset dir="game/${game.name}/maps" includes="**/*.*"/>
+		</copy>
+
+		<copy file="../gpl.txt" todir="${dir.lobby.dist.client}/${game.name}"/>
+		<copy file="../ChangeLog.txt" todir="${dir.lobby.dist.client}/${game.name}"/>
+
+		<copy todir="${dir.lobby.dist.client}/${game.name}/help">
+			<fileset dir="game/${game.name}/help" includes="**/*.*"/>
+		</copy>
+	</target>
+
+	<target name="lobby.server.dist" if="dir.lobby.dist.server.available">
+
+		<copy file="${dir.dist}/${game.name}Server.jar" todir="${dir.lobby.dist.server}/${game.name}"/>
+
+		<copy todir="${dir.lobby.dist.server}/${game.name}/maps">
+			<fileset dir="game/${game.name}/maps" includes="*.map,*.cards"/>
+		</copy>
+
+	</target>
+
+
+
+
+
+	<target name="clean" description="Removes all the generated classes and files" >
+		<delete dir="${dir.build}" includeemptydirs="true"/>
+                <delete dir="${dir.dist}" includeemptydirs="true"/>
+	</target>
+
+
+
+
+
+
+    <target name="setup.android" description="copy maps/help/changelog/gpl into assets" >
+
+        <property name="dir.assets" location="../android/assets"/>
+        
+	<mkdir dir="${dir.assets}/maps"/>
+	<copy todir="${dir.assets}/maps">
+		<fileset dir="game/${game.name}/maps" includes="**/*.*"/>
+	</copy>
+
+	<mkdir dir="${dir.assets}/help"/>
+	<copy todir="${dir.assets}/help">
+		<fileset dir="game/${game.name}/help" includes="**/*.*"/>
+	</copy>
+
+	<mkdir dir="${dir.assets}/services"/>
+	<copy todir="${dir.assets}/services">
+		<fileset dir="../src/META-INF/services" includes="**/*.*"/>
+	</copy>
+
+	<copy file="../gpl.txt" todir="${dir.assets}"/>
+	<copy file="../ChangeLog.txt" todir="${dir.assets}"/>
+
+    </target>
+
+
+
+    <target name="demo" description="create game to run in me4se" depends="setup.android">
+
+        <mkdir dir="${dir.build}/swingme"/>
+        <mkdir dir="dist"/>
+
+        <javac debug="on" srcdir="../src:../sharedUI/src_mini_game_ui:../sharedUI/src_mapstore_lobby" destdir="${dir.build}/swingme"
+        source="${source.version}" target="${source.version}" classpath="${dir.libs}" encoding="Cp1252"/>
+
+        <copy todir="${dir.build}/swingme">
+                <fileset dir="../sharedUI/res_mini_game_ui" includes="**/*.*" excludes="**/*.ini"/>
+                <fileset dir="../sharedUI/res_mapstore_lobby" includes="**/*.*" />
+                <fileset dir="../sharedUI/img_mini_game_ui/drawable-mdpi" includes="**/*.*"/>
+                <fileset dir="../sharedUI/img_mapstore_lobby/drawable-mdpi" includes="**/*.*"/>
+                <fileset dir="../sharedUI/img_mini_game_ui" includes="drawable-xhdpi/**/*.*"/>
+                <fileset dir="../sharedUI/img_mapstore_lobby" includes="drawable-xhdpi/**/*.*"/>
+        </copy>
+
+        <copy todir="${dir.build}/swingme" filtering="true">
+                <fileset dir="../sharedUI/res_mini_game_ui" includes="**/*.ini"/>
+                <fileset dir="${dir.properties}" includes="**/*.properties"/>
+        </copy>
+
+        <!-- copy assets into jar -->
+
+        <copy todir="${dir.build}/swingme">
+                <fileset dir="../src" includes="META-INF/services/**"/>
+        </copy>
+
+        <jar destfile="dist/${game.name}4ME.jar" basedir="${dir.build}/swingme">
+            <manifest>
+                <attribute name="Main-Class" value="org.me4se.ApplicationLauncher" />
+                <attribute name="Class-Path" value="lib/midletrunner.jar lib/m3gbasic.jar lib/SwingME.jar lib/Grasshopper.jar lib/LobbyClient.jar lib/MiniLobbyClient.jar lib/jlayer-1.0.1.4.jar lib/mp3spi-1.9.5.4.jar lib/tritonus-share-0.3.7.4.jar" />
+                <attribute name="MIDlet-1" value="Mini ${game.name},,net.yura.domination.mobile.flashgui.DominationMain" />
+            </manifest>
+        </jar>
+
+    </target>
+
+    <!-- gen xml -->
+
+    <target name="generate" description="generate the persistance manager class">
+
+	<path id="class.path">
+	    <fileset dir="lib">
+		<include name="**/*.jar" />
+	    </fileset>
+		<fileset dir="${dir.dist}">
+                <include name="**/*.jar" />
+            </fileset>
+        </path>
+
+        <taskdef classname="net.yura.tools.mobilegen.MobileXmlGen" classpathref="class.path" name="gen-xml"/>
+        <gen-xml
+            classNamesFile="sharedUI/gen_mapstore.properties"
+            outputPackage="net.yura.domination.mapstore.gen"
+            outputClass="XMLMapAccess"
+            sourceRoot="sharedUI/src_mapstore_lobby"/>
+
+    </target>
+
+
+    <target name="run" depends="game" description="override default run action of netbeans">
+        <java dir="${dir.build.game}" jar="${dir.build.game}/${game.name}.jar"/>
+    </target>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <import file="${sdk.dir}/tools/ant/build.xml"/> -->
+
+<!--
+some changes need to be made to the ${sdk.dir}/tools/ant/build.xml file
+1. at the top it says name="", delete this to leave <project default="debug">
+2. comment out the line: <fileset dir="${source.absolute.dir}" excludes="**/*.java ${android.package.excludes}" />
+-->
+
+    <target name="android" description="build and run on android" depends="setup.android">
+
+        <property file="ant.properties" />
+        <property environment="env" />
+        <condition property="sdk.dir" value="${env.ANDROID_HOME}">
+            <isset property="env.ANDROID_HOME" />
+        </condition>
+        <loadproperties srcFile="project.properties" />
+        <fail
+            message="sdk.dir is missing. Make sure to generate local.properties using 'android update project'"
+            unless="sdk.dir"
+        />
+
+        <ant antfile="${sdk.dir}/tools/ant/build.xml">
+            <target name="clean"/>
+            <target name="debug"/>
+            <target name="install"/>
+        </ant>
+
+    </target>
+
+
+
+
+
+
+
+
+    <!-- 
+        Java Code Coverage (JaCoCo)
+        taken from https://www.jacoco.org/jacoco/trunk/doc/examples/build/build.xml
+    -->
+
+    <property name="result.exec.file" location="${dir.build}/jacoco.exec" />
+    <property name="result.report.dir" location="${dir.build}/report/jacoco" />
+
+    <target name="report" depends="classes,test">
+
+        <!-- convert our ":" seperated string into "," seperated string-->
+        <loadresource property="src.dir">
+        <propertyresource name="dir.sources"/>
+            <filterchain>
+                <tokenfilter>
+                    <filetokenizer/>
+                    <replacestring from=":" to=","/>
+                </tokenfilter>
+            </filterchain>
+        </loadresource>
+
+        <jacoco:report xmlns:jacoco="antlib:org.jacoco.ant">
+
+                <!-- This task needs the collected execution data and ... -->
+                <executiondata>
+                        <file file="${result.exec.file}" />
+                </executiondata>
+
+                <!-- the class files and optional source files ... -->
+                <structure name="Java Code Coverage (JaCoCo) Domination">
+                        <classfiles>
+                                <fileset dir="${dir.build.classes}" />
+                        </classfiles>
+                        <sourcefiles encoding="UTF-8">
+                            <multirootfileset basedirs="${src.dir}" includes="**/*" />
+                        </sourcefiles>
+                </structure>
+
+                <!-- to produce reports in different formats. -->
+                <html destdir="${result.report.dir}" />
+                <csv destfile="${result.report.dir}/report.csv" />
+                <xml destfile="${result.report.dir}/report.xml" />
+        </jacoco:report>
+    </target>
+
+</project>

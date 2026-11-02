@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module_run>
+	<player_reference>
+		green
+	</player_reference>
+	<game_file>
+		game10ab24ac55890a36e7b.xml
+	</game_file>
+	<current_round>
+		3
+	</current_round>
+	<input>
+		<board_file>
+			board10ab252a26ffca0e365.xml
+		</board_file>
+		<armies_left>
+			2
+		</armies_left>
+		<merged_plan_list>
+		</merged_plan_list>
+	</input>
+	<output>
+		<territory>
+			Western-United-States
+		</territory>
+	</output>
+</module_run>

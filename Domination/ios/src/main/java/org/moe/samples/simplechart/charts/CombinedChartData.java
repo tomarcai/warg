@@ -1,0 +1,265 @@
+package org.moe.samples.simplechart.charts;
+
+
+import apple.NSObject;
+import apple.foundation.NSArray;
+import apple.foundation.NSMethodSignature;
+import apple.foundation.NSSet;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.general.NatJ;
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.objc.Class;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ObjCClassName;
+import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
+
+@Generated
+@Library("Charts")
+@Runtime(ObjCRuntime.class)
+@ObjCClassName("_TtC6Charts17CombinedChartData")
+@ObjCClassBinding
+public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
+    static {
+        NatJ.register();
+    }
+
+    @Generated
+    protected CombinedChartData(Pointer peer) {
+        super(peer);
+    }
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    /**
+     * All data objects in row: line-bar-scatter-candle-bubble if not null.
+     */
+    @Generated
+    @Selector("allData")
+    @NotNull
+    public native NSArray<? extends ChartData> allData();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native CombinedChartData alloc();
+
+    @Generated
+    @Owned
+    @Selector("allocWithZone:")
+    public static native CombinedChartData allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
+
+    @Generated
+    @Selector("barData")
+    public native BarChartData barData();
+
+    @Generated
+    @Selector("bubbleData")
+    public native BubbleChartData bubbleData();
+
+    @Generated
+    @Selector("calcMinMax")
+    public native void calcMinMax();
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
+
+    @Generated
+    @Selector("candleData")
+    public native CandleChartData candleData();
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    @NotNull
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    @NotNull
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("dataByIndex:")
+    @NotNull
+    public native ChartData dataByIndex(long index);
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    /**
+     * Get the Entry for a corresponding highlight object
+     * \param highlight
+     * 
+     * 
+     * returns:
+     * The entry that is highlighted
+     */
+    @Generated
+    @Selector("entryForHighlight:")
+    @Nullable
+    public native ChartDataEntry entryForHighlight(@NotNull ChartHighlight highlight);
+
+    /**
+     * Get dataset for highlight
+     * \param highlight current highlight
+     * 
+     * 
+     * returns:
+     * dataset related to highlight
+     */
+    @Generated
+    @Selector("getDataSetByHighlight:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native IChartDataSet getDataSetByHighlight(@NotNull ChartHighlight highlight);
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("init")
+    public native CombinedChartData init();
+
+    @Generated
+    @Selector("initWithDataSet:")
+    public native CombinedChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) @Nullable IChartDataSet dataSet);
+
+    @Generated
+    @Selector("initWithDataSets:")
+    public native CombinedChartData initWithDataSets(@Nullable NSArray<?> dataSets);
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    @NotNull
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
+
+    @Generated
+    @Selector("lineData")
+    public native LineChartData lineData();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    public static native CombinedChartData new_objc();
+
+    @Generated
+    @Selector("notifyDataChanged")
+    public native void notifyDataChanged();
+
+    @Generated
+    @Selector("removeDataSet:")
+    public native boolean removeDataSet(@Mapped(ObjCObjectMapper.class) @NotNull IChartDataSet dataSet);
+
+    @Generated
+    @Selector("removeDataSetByIndex:")
+    public native boolean removeDataSetByIndex(long index);
+
+    @Generated
+    @Selector("removeEntry:dataSetIndex:")
+    public native boolean removeEntryDataSetIndex(@NotNull ChartDataEntry entry, long dataSetIndex);
+
+    @Generated
+    @Selector("removeEntryWithXValue:dataSetIndex:")
+    public native boolean removeEntryWithXValueDataSetIndex(double xValue, long dataSetIndex);
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("scatterData")
+    public native ScatterChartData scatterData();
+
+    @Generated
+    @Selector("setBarData:")
+    public native void setBarData(BarChartData value);
+
+    @Generated
+    @Selector("setBubbleData:")
+    public native void setBubbleData(BubbleChartData value);
+
+    @Generated
+    @Selector("setCandleData:")
+    public native void setCandleData(CandleChartData value);
+
+    @Generated
+    @Selector("setLineData:")
+    public native void setLineData(LineChartData value);
+
+    @Generated
+    @Selector("setScatterData:")
+    public native void setScatterData(ScatterChartData value);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+}

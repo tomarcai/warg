@@ -1,0 +1,148 @@
+/************************/
+/** Build Script Setup **/
+/************************/
+
+buildscript {
+    // Add central and local Maven repos
+    repositories {
+        mavenCentral()
+        maven { url 'https://central.sonatype.com/repository/maven-snapshots/' }
+        mavenLocal()
+    }
+    dependencies {
+        // MOE plugin
+        // when this is updated you need to run: "./gradlew moeUpdateXcodeSettings"
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.10.2'
+    }
+    // this is here to tell gradle to refresh the moe dependency in the event i am trying a snapshot
+    // but this does not seem to work instead if the snapshot is sticky i need to go into Intelij/Android Studio
+    // right-click on the project name in the Gradle Tool Window and select Refresh dependencies from the context menu.
+    //configurations.all {
+    //    resolutionStrategy.cacheChangingModulesFor 60, 'seconds'
+    //}
+    // or "./gradlew dependencies --refresh-dependencies"
+}
+
+/*******************/
+/** Project Setup **/
+/*******************/
+
+// Apply plugins
+apply plugin: 'moe'
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+// issue with MOE-1.10.1 means that as soon as any ios specific source file gradle wants jdk11
+// https://github.com/multi-os-engine/multi-os-engine/issues/209
+// workaround is to add this:
+afterEvaluate {
+    compileJava.sourceCompatibility = "1.8"
+    compileJava.targetCompatibility = "1.8"
+    compileTestJava.sourceCompatibility = "1.8"
+    compileTestJava.targetCompatibility = "1.8"
+}
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup MOE
+moe {
+    xcode {
+        project 'xcode/Domination.xcodeproj'
+        mainTarget = 'Domination'
+        testTarget = 'Domination-Test'
+
+        // Uncomment and change these settings if you are working with a Xcode workspace
+        workspace 'xcode/Domination.xcworkspace'
+        mainScheme 'Domination'
+        testScheme 'Domination-Test'
+    }
+
+    // to generate the obj-c headers run "./gradlew ios:moeMainDebugIphonesimulatorXcodeBuild"
+    // then to generate the java bindings run "./gradlew ios:moeNatJGen" (or click 'Generate Binding' in intellij .nbc editor)
+    natjgen {
+        config='pods.nbc'
+    }
+}
+
+// to disable proguard put -dontshrink in the config
+moeMainReleaseProGuard {
+    appendCfgFile "../../iOSME/proguard.append.cfg"
+}
+moeMainDebugProGuard {
+    appendCfgFile "../../iOSME/proguard.append.cfg"
+}
+moeTestDebugProGuard {
+    appendCfgFile "../../iOSME/proguard.append.cfg"
+}
+
+// this is needed for MOE 1.9.0 for building from Xcode to work
+// https://discuss.multi-os-engine.org/t/eerror-when-executing-in-xcode/2926/2
+project.afterEvaluate {
+    // Hack to work around errors relating to afterEvaluate
+    moeMainDebugIphoneosXcodeBuild.mustRunAfter noOp
+    moeMainDebugIphonesimulatorXcodeBuild.mustRunAfter noOp
+    moeMainReleaseIphoneosXcodeBuild.mustRunAfter noOp
+    moeMainReleaseIphonesimulatorXcodeBuild.mustRunAfter noOp
+}
+task noOp {
+    doLast {
+        println "NoOp"
+    }
+}
+
+import org.moe.generator.project.writer.XcodeEditor
+// by default "./gradlew moeUpdateXcodeSettings" ONLY updates the main 2 targets
+// but we have a 3rd target also, so we want to make sure we also update that
+moeUpdateXcodeSettings {
+    doLast {
+        def mainTargets = ["Simple"]
+        def xcodeProj = file(moe.xcode.project)
+        mainTargets.forEach {
+            def settings = new XcodeEditor.Settings()
+            settings.mainTarget = it
+            //settings.testTarget = moe.xcode.testTarget
+            settings.moeProject = getProjectDir()
+            settings.xcodeProject = xcodeProj
+            //settings.useLLVM = moe.nativeImage.useLLVM
+
+            XcodeEditor xcodeEditor = new XcodeEditor(xcodeProj)
+            xcodeEditor.update(settings)
+            xcodeEditor.getProjectFile().save()
+        }
+    }
+}
+
+// Set dependencies
+dependencies {
+    implementation project(':sharedUI')
+    implementation project(":iOSME")
+    // Compile with 'jar' files in the project's 'lib' directory
+    implementation fileTree(dir: 'lib', include: '*.jar')
+}
+
+
+task copyAssets(type: Copy) {
+    from '../sharedUI/img_mini_game_ui/drawable-mdpi'
+    from '../sharedUI/img_mapstore_lobby/drawable-mdpi'
+    into 'xcode/Graphics'
+}
+project.processResources.dependsOn(copyAssets)
+
+task copyAssets2x(type: Copy) {
+    from '../sharedUI/img_mini_game_ui/drawable-xhdpi'
+    from '../sharedUI/img_mapstore_lobby/drawable-xhdpi'
+    into 'xcode/Graphics'
+    rename { filename -> filename.replace '.png', '@2x.png' }
+}
+project.processResources.dependsOn(copyAssets2x)
+
+task copyAssets3x(type: Copy) {
+    from '../sharedUI/img_mini_game_ui/drawable-xxhdpi'
+    from '../sharedUI/img_mapstore_lobby/drawable-xxhdpi'
+    into 'xcode/Graphics'
+    rename { filename -> filename.replace '.png', '@3x.png' }
+}
+project.processResources.dependsOn(copyAssets3x)

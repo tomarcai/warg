@@ -1,0 +1,60 @@
+<sounds>
+    
+    <!--
+    
+    https://developer.android.com/media/platform/supported-formats
+    
+    https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/MultimediaPG/UsingAudio/UsingAudio.html#//apple_ref/doc/uid/TP40009767-CH2-SW6
+    https://developer.apple.com/library/archive/documentation/MusicAudio/Conceptual/CoreAudioOverview/SupportedAudioFormatsMacOSX/SupportedAudioFormatsMacOSX.html
+    
+    -->
+
+    <sound name="music_menu" file="medieval/menu_music1.mp3"/>
+    <sound name="music_setup" file="medieval/medieval1.mp3"/>
+    <sound name="music_lobby" file="medieval/music_searcing_online_game.mp3"/>
+
+    <sound name="music_my_turn" file="medieval/music_when_is_my_turn.mp3"/>
+    <sound name="music_other_turn" file="medieval/music_while_waiting_your_turn.mp3"/>
+    <sound name="music_battle" file="medieval/duel-loop.mp3"/>
+    <sound name="music_victory" file="medieval/music_win.mp3"/>
+    <sound name="music_defeat" file="medieval/music_defeat1.mp3"/>
+
+    <sound name="menu_button" file="medieval/select1.mp3"/>
+    
+    <!-- buttoms on game setup screen -->
+    <sound name="button" file="medieval/button1.mp3"/>
+    <sound name="back_button" file="medieval/return button3.mp3"/>
+    <sound name="button_start_game" file="medieval/game starting.mp3"/>
+
+    <sound name="cards_receive" file="medieval/receiving card.mp3"/>
+    <sound name="cards_trade" file="medieval/trade-cards-in-medieval-map.mp3"/>
+
+    <sound name="place_army" file="medieval/adding pieces.mp3"/>
+    <sound name="place_armies" file="medieval/adding_soldiers1.mp3"/>
+
+    <sound name="attack" file="medieval/attack.mp3"/>
+    <sound name="battle_retreat" file="medieval/retreating.mp3"/>
+
+    <sound name="dice_roll" file="medieval/batttle_medieval_map1.mp3"/>
+    <sound name="dice_win" file="medieval/Victory2.mp3"/>
+    <sound name="dice_lose" file="medieval/losing medieval battle1.mp3"/>
+    <sound name="dice_draw" file="medieval/medieval-draw-battle.mp3"/>
+
+    <sound name="battle_win" file="medieval/won-against-all-troops-medieval.mp3"/>
+    <sound name="battle_defeat" file="medieval/lost-all-troops-medieval.mp3"/>
+
+    <sound name="battle_defense_win" file="medieval/defense sucess.mp3"/>
+    <sound name="battle_defense_defeat" file="medieval/lost1.mp3"/>
+
+    <sound name="move_armies" file="medieval/moving soldiers after to win and conquer territory.mp3"/>
+    <sound name="move_tactical" file="medieval/moving troops1.mp3"/>
+
+
+    <sound name="lobby_start" file="medieval/entered lobby.mp3"/>
+    <sound name="lobby_join" file="medieval/joining room.mp3"/>
+    <sound name="lobby_leave" file="medieval/leaving match.mp3"/>
+    <sound name="lobby_play" file="medieval/joining match.mp3"/>
+    <sound name="lobby_watch" file="medieval/spectator mode.mp3"/>
+    <sound name="lobby_set_nick" file="medieval/saving name.mp3"/>
+
+</sounds>

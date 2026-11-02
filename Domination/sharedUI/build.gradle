@@ -1,0 +1,32 @@
+plugins {
+    id 'java-library'
+}
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = "cp1252"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src_mapstore_lobby', 'src_mini_game_ui']
+        }
+        resources {
+            srcDirs = ['res_mapstore_lobby', 'res_mini_game_ui']
+        }
+    }
+}
+
+dependencies {
+    api rootProject
+
+    // we link to the project and not the jar so any code changes are picked up automatically
+    api project(":SwingME")
+
+    api fileTree(dir: 'lib', include: ['LobbyCore.jar', 'MiniLobbyClient.jar'])
+
+    // these are needed for compile only, the actual versions used are specific to android/ios
+    compileOnly fileTree(dir: '../swingUI/lib', include: ['Grasshopper.jar','midletrunner.jar'])
+}

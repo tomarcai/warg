@@ -1,0 +1,276 @@
+{% load thumbnail %}<html>
+
+{% with "http://domination.sf.net/" as base %} 
+    
+<head>
+<title>yura.net Domination - Maps</title>
+
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+</script>
+
+<LINK REL="SHORTCUT ICON" type="image/gif" HREF="{{base}}images/earth_small.gif">
+
+<link rel="stylesheet" type="text/css" href="{{base}}domination.css"/>
+
+</head>
+
+<body background="{{base}}images/back.jpg" text="#FFFFFF" link="#FF66FF" vlink="#FFFF00" alink="#00FF00" topmargin="0" leftmargin="0">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="33" height="33">&nbsp;</td>
+        <td width="33">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td width="33">&nbsp;</td>
+        <td width="33">&nbsp;</td>
+        <td width="33">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td width="33">&nbsp;</td>
+        <td width="33">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><img src="{{base}}images/top-left.gif" width="33" height="33"></td>
+        <td background="{{base}}images/top.jpg">&nbsp;</td>
+        <td><img src="{{base}}images/top-right.gif" width="33"
+        height="33"></td>
+        <td>&nbsp;</td>
+        <td><img src="{{base}}images/top-left.gif" width="33" height="33"></td>
+        <td background="{{base}}images/top.jpg">&nbsp;</td>
+        <td><img src="{{base}}images/top-right.gif" width="33"
+        height="33"></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td background="{{base}}images/left.jpg"><p>&nbsp;</p>&nbsp;</td>
+        <td valign="top" background="{{base}}images/back2.jpg">
+
+
+
+<h1>Download Extra Maps:</h1>
+
+<br>
+
+<!-- hidden -->
+
+<!--
+<div class='thumbnail'><a href="maps/board.zip">	<img src="images/maps/copy/board.jpg" border="1" width="150" height="94"><br>	1. Board Map</a><br>					by Yura Mamyrin					</div>
+<div class='thumbnail'><a href="maps/risk2.zip">	<img src="images/maps/copy/risk2.jpg" border="1" width="150" height="94"><br>	2. Risk II Map</a><br>					by Yura Mamyrin					</div>
+<div class='thumbnail'><a href="maps/risk2210.zip">	<img src="images/maps/copy/risk2210.jpg" border="1" width="150" height="94"><br>3. Risk 2210 Map</a><br>					by Matthias Kuehl				</div>
+<div class='thumbnail'><a href="maps/aa.zip">		<img src="images/maps/copy/aa.jpg" border="1" width="150" height="94"><br>	4. Axis and Allies Map</a><br>				by Paul Habermann				</div>
+<div class='thumbnail'><a href="maps/godstorm.zip">	<img src="images/maps/copy/godstorm.jpg" border="1" width="150" height="94"><br>5. Risk Godstorm Map</a><br>				by Yura Mamyrin					</div>
+<div class='thumbnail'><a href="maps/napoleon.zip">	<img src="images/maps/copy/napoleon.jpg" border="1" width="150" height="94"><br>6. Risk Napoleon</a><br>					by Kaiba08					</div>
+-->
+
+<!-- come with the game -->
+
+<div class='thumbnail'>					<img src="{{base}}images/maps/luca.jpg" border="1" width="150" height="94"><br>		7. World War Map<br>					by Luca Fumis		<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/risk.jpg" border="1" width="150" height="94"><br>		8. Risk Map<br>						by Yura Mamyrin		<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/roman_empire.jpg" border="1" width="150" height="94"><br>	9. Roman Empire Map<br>					by Adrien Schvalberg	<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/teg.jpg" border="1" width="150" height="94"><br>		10. TEG Map<br>						by Wolfgang Morawetz	<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/tube.jpg" border="1" width="150" height="94"><br>		11. Tube Map<br>						by Yura Mamyrin		<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/uk.jpg" border="1" width="150" height="94"><br>		12. UK Map<br>						by Yura Mamyrin		<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/world.jpg" border="1" width="150" height="94"><br>	13. World Map<br>					by Christian Domsch &amp; others<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/sersom.jpg" border="1" width="150" height="94"><br>	14. S.E.R.S.O.M.<br>					by Yura Mamyrin		<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/ameroki.jpg" border="1" width="150" height="94"><br>	15. Ameroki Map<br>					by Shane Williams	<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/eurasien.jpg" border="1" width="150" height="94"><br>	16. Eurasien Map<br>					by Alexis V. Papadopoulos<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/geoscape.jpg" border="1" width="150" height="94"><br>	17. Geoscape Map<br>					by David Lawrence	<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/lotr.jpg" border="1" width="150" height="94"><br>		18. Lord of the Rings Map<br>				by liz			<br>(Comes with the game)</div>
+<div class='thumbnail'>					<img src="{{base}}images/maps/riskeurope.jpg" border="1" width="150" height="94"><br>	19. Risk Europe Map<br>					by Simon Witzel		<br>(Comes with the game)</div>
+
+<!-- planets -->
+
+{% for map in map_list %}
+
+<div class='thumbnail'>
+    <a href="/maps/{{ map.id }}">
+        {% if map.imageFile %}
+	    {% thumbnail map.imageFile 150x94 crop as im %}
+            <img src="{{ im.url }}" border="1" width="150" height="94"><br>
+	{% endif %}
+        {{ map.name }}
+    </a><br>
+    by {{ map.author.get_full_name }}
+</div>
+
+{% endfor %}
+
+
+
+
+
+        </td>
+        <td background="{{base}}images/right.jpg">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td background="{{base}}images/left.jpg">&nbsp;</td>
+        <td valign="top" width="150" background="{{base}}images/back2.jpg">
+
+
+
+
+<!-- NAV START -->
+
+
+
+
+	<p>
+	<a href="{{base}}applet/ChangeLog.txt">Change Log</a><br>
+	<br>
+	<a href="{{base}}index.shtml">News</a><br>
+	<a href="{{base}}ss.shtml">Screen Shots</a><br>
+	<a href="{{base}}download.shtml">Download</a><br>
+	<a href="getmaps.shtml">Extra Maps</a><br>
+	<a href="{{base}}faq.shtml">FAQ</a><br>
+	<br>
+
+<a href="{{base}}applet/flashDomination.jnlp">FlashGUI Web Start<br>
+<img src="{{base}}images/webstart.png" alt="Launches Flash GUI Domination" height="23" width="88"></a><br>
+
+
+
+
+<a href="{{base}}applet/swingDomination.jnlp">SwingGUI Web Start<br>
+<img src="{{base}}images/webstart.png" alt="Launches Swing GUI Domination" height="23" width="88"></a><br>
+
+	<br>
+	<a href="{{base}}flashgui.shtml">Flash Applet</a><br>
+	<a href="{{base}}swinggui.shtml">Swing Applet</a><br>
+</p>
+
+
+
+
+
+<p><g:plusone href="http://domination.sourceforge.net/"></g:plusone></p>
+
+
+
+
+<p>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http://www.facebook.com/BubbleandSpice" data-send="false" data-layout="button_count" data-width="150" data-show-faces="true"></div>
+
+</p>
+
+
+
+
+
+<p>
+	<a href="{{base}}makemaps.shtml">Make Maps</a><br>
+	<a href="{{base}}makelan.shtml">Make Translation</a><br>
+	<a href="{{base}}makeai.shtml">Make AI</a>
+	</p>
+
+        <p><a href="http://sf.net/projects/domination/">Domination Project Page on SourceForge</a></p>
+        <p><a href="http://freshmeat.net/projects/domination">Domination Project Page on Freshmeat</a></p>
+
+        <p><a href="http://lobby.sf.net/">Lobby Web Site on SourceForge</a></p>
+        <p><a href="http://sf.net/projects/lobby/">Lobby Project Page on SourceForge</a></p>
+
+
+
+
+
+
+	<a href="http://sourceforge.net/donate/index.php?group_id=79448"><img src="http://images.sourceforge.net/images/project-support.jpg" alt="Support This Project" border="0" width="88" height="32" /></a><br>
+        If you like this game and would want me to spend more time on it, please donate, anything would be appreciated!
+
+<center>
+
+        <p><a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=79448&amp;type=2" alt="SourceForge.net Logo" border="0" /></a> </p>
+
+
+
+
+<!--
+<p>Search Source Code:</p>
+-->
+
+
+
+
+
+
+        <p>copyright 2003-2011 <a href="http://yura.net/">yura.net</a></p>
+
+<script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/translatemypage.xml&up_source_language=en&w=160&h=60&title=&border=&output=js"></script>
+
+<script language="JavaScript1.2" src="http://www.altavista.com/static/scripts/translate_engl.js"></script>
+
+
+</center>
+
+
+
+
+
+
+<!-- NAV END -->
+
+
+        </td>
+        <td background="{{base}}images/right.jpg">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><img src="{{base}}images/bottom-left.gif" width="33"
+        height="33"></td>
+        <td background="{{base}}images/bottom.jpg">&nbsp;</td>
+        <td><img src="{{base}}images/bottom-right.gif" width="33"
+        height="33"></td>
+        <td>&nbsp;</td>
+        <td><img src="{{base}}images/bottom-left.gif" width="33"
+        height="33"></td>
+        <td background="{{base}}images/bottom.jpg">&nbsp;</td>
+        <td><img src="{{base}}images/bottom-right.gif" width="33"
+        height="33"></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td height="33">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+
+<!--
+<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+</div></div></div></div></div></div></div></div>
+-->
+
+</body>
+
+{% endwith %}
+
+</html>
+
+
+

@@ -1,0 +1,248 @@
+
+        </td>
+        <td background="images/right.jpg">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td background="images/left.jpg">&nbsp;</td>
+        <td valign="top" width="150" background="images/back2.jpg">
+
+
+<!-- NAV START -->
+
+<p>
+<a href="index.shtml">News</a><br>
+<a href="ss.shtml">Screen Shots</a><br>
+<a href="http://sf.net/p/domination/code/HEAD/tree/Domination/ChangeLog.txt">Change Log</a><br>
+<a href="faq.shtml">FAQ</a><br>
+<a href="https://discord.gg/K3VzKeryvJ" target="_blank">Chat/Discord</a><br>
+</p>
+
+
+
+
+
+<!--#if expr="\"$DOCUMENT_URI\" != \"/patreon.shtml\"" -->
+
+<h3>Support:</h3>
+
+
+<!-- from: https://www.patreon.com/dashboard/widgets -->
+<div style="width: 176px;overflow:hidden; background-color: #f76c4f;">
+<a href="https://www.patreon.com/bePatron?u=11130257" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js" charset="UTF-8"></script>
+</div>
+
+<p>
+<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://domination.sourceforge.net/"></a>
+<noscript><a href="http://flattr.com/thing/844816/Domination-Game" target="_blank">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
+</p>
+
+<!-- freedomsponsors seems to no longer be alive
+<p><a href="https://freedomsponsors.org/project/170/Domination">FreedomSponsors</a></p>
+-->
+
+<!-- paypal no longer works
+<a href="http://sourceforge.net/donate/index.php?group_id=79448"><img src="http://images.sourceforge.net/images/project-support.jpg" alt="Support This Project" border="0" width="88" height="32" /></a><br>If you like this game and would want me to spend more time on it, please donate, anything would be appreciated!
+-->
+
+<!--#endif -->
+
+
+
+
+
+<h3>Play:</h3>
+
+<p style="white-space:nowrap">
+<a href="download.shtml"><img src="images/platforms/mac.png" width="24" height="24" alt="Mac"><img src="images/platforms/windows.png" width="24" height="24" alt="Windows"><img src="images/platforms/linux.png" width="24" height="24" alt="Linux"><img alt="Download" src="https://img.shields.io/sourceforge/dt/domination.svg" ></a><br>
+</p>
+
+
+<p>
+<a href="https://itunes.apple.com/app/id1602913079"><img src="images/download-on-the-app-store-badge.png" alt="Download on the AppStore" width="160" height="54"></a>
+</p>
+
+
+<p>
+<a href="http://www.amazon.com/gp/product/B008HQRC6O/ref=domination_sf_net"><img src="images/Amazon_APP_Store_Badge.png" alt="Android App on Amazon AppStore" width="143" height="48"></a>
+</p>
+
+
+<!-- https://appgallery.huawei.com/#/app/C104309565 -->
+<p>
+<a href="https://appgallery.cloud.huawei.com/ag/n/app/C104309565?channelId=sf&id=d9183f74d5cc4efdbe74e2631704c748&s=472788F7D5E88C64A8B0CB40C034ECB981BE39C9A0D74987C5844546479FDF2A&detailType=0&v="><img src="images/android_app_on_huawei_logo_small.png" alt="Android App on Huawei AppGallery" width="150" height="45"></a>
+</p>
+
+<p>
+<a href="https://play.google.com/store/apps/details?id=net.yura.domination"><img src="images/android_app_on_play_logo_small.png" alt="Android App on Google Play" width="129" height="45"></a>
+</p>
+
+<!--
+<p>
+<a href="https://support.microsoft.com/en-us/windows/install-mobile-apps-and-the-amazon-appstore-on-windows-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c" target=”_blank”>
+    <img src="images/windows-subsystem-for-android.png" width="32" height="39" alt="Windows Subsystem For Android" title="Windows Subsystem For Android"/></a>
+    
+<a href="https://apps.microsoft.com/store/detail/XPDCFHCCXQDKBM?launch=true&mode=mini">
+	<img src="https://get.microsoft.com/images/en-GB%20dark.svg"/>
+</a>
+</p>
+-->
+
+<p>
+<a href="applet/flashDomination.jnlp"><img src="images/webstart.png" alt="Launches Flash GUI Domination" height="23" width="88"></a>
+</p>
+
+
+<!-- old methods to play, no longer working
+<a href="http://appworld.blackberry.com/webstore/content/20485828/"><img src="images/BBWorld_Get It_small.png" alt="Get it at BlackBerry World" width="136" height="48"></a>
+<a href="applet/swingDomination.jnlp">SwingGUI Web Start<br><img src="images/webstart.png" alt="Launches Swing GUI Domination" height="23" width="88"></a>
+<a href="flashgui.shtml">Flash Applet</a><br>
+<a href="swinggui.shtml">Swing Applet</a><br>
+-->
+
+
+
+<h3>Share:</h3>
+
+
+<!--
+<g:plusone href="http://domination.sourceforge.net/"></g:plusone>
+-->
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v17.0" nonce="6qLXPOfO"></script>
+<div style="display: inline-block;padding: 3px 12px 3px 12px;background-color: #fff;border-radius: 9999px;">
+<div class="fb-share-button" data-href="https://www.facebook.com/DominationRisk/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FDominationRisk%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+</div>
+
+<!--
+<div class="fb-like" data-href="http://www.facebook.com/BubbleandSpice" data-send="false" data-layout="button_count" data-width="150" data-show-faces="true"></div>
+-->
+
+<!--
+from: https://www.pietschsoft.com/post/2024/11/22/how-to-add-share-on-bluesky-action-intent-button-to-your-website
+-->
+&nbsp; &nbsp;
+<div style="display: inline-block;padding: 3px 12px 3px 12px;background-color: #000;border-radius: 9999px;">
+<a style="font: normal normal normal 12px/18px 'Helvetica Neue', Arial, sans-serif; color: #fff; text-decoration: none;" href="https://bsky.app/intent/compose?text=yura.net%20Domination%20(Risk%20Board%20Game)" target="_blank">
+<svg width="1em" height="1em" fill="#fff" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg">
+<path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+</svg>
+Share</a>
+</div>
+
+
+<!--
+<p>
+<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+-->
+
+
+<h3>Develop:</h3>
+
+
+<p>
+<a href="makemaps.shtml">Make Maps</a><br>
+<a href="getmaps.shtml">Example Maps</a><br>
+<a href="makelan.shtml">Make Translation</a><br>
+<a href="makeai.shtml">Make AI</a>
+</p>
+
+
+<p>
+<a href="http://sf.net/p/domination/_list/tickets">Bug Tracker</a> (<a href="https://sourceforge.net/p/domination/code/HEAD/tree/Domination/todo.txt">todo</a>)<br>
+<a href="http://sf.net/p/domination/discussion/271205/">Discussion</a><!-- <a href="http://yura.net/projects/domination#comments">Comments</a>--><br>
+<a href="http://sf.net/p/jrisk/mailman/">Mailinglist</a> (<a href="http://sf.net/p/lobby/mailman/">lobby</a>)
+</p>
+
+
+<h3>Links:</h3>
+
+
+<p><a href="http://sf.net/projects/domination/">Domination Project Page on SourceForge</a></p>
+<!--
+<p><a href="http://freshmeat.net/projects/domination">Domination Project Page on Freshmeat</a> <a href="http://freshmeat.net/projects/risk">R</a></p>
+-->
+<p><a href="http://lobby.sf.net/">Lobby Web Site on SourceForge</a></p>
+<p><a href="http://sf.net/projects/lobby/">Lobby Project Page on SourceForge</a></p>
+
+
+<center>
+
+
+<p><a href="http://sourceforge.net"><img src="https://sourceforge.net/sflogo.php?group_id=79448&amp;type=2" alt="SourceForge.net Logo" border="0" /></a></p>
+<p>copyright 2003-2026 <a href="http://yura.net/">yura.net</a></p>
+
+
+<!--
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-75194-2'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+-->
+
+
+<script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/translatemypage.xml&up_source_language=en&w=160&h=60&title=&border=&output=js"></script>
+<script language="JavaScript1.2" src="http://www.altavista.com/static/scripts/translate_engl.js"></script>
+
+
+</center>
+
+
+
+
+
+
+<!-- NAV END -->
+
+
+        </td>
+        <td background="images/right.jpg">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><img src="images/bottom-left.gif" width="33"
+        height="33"></td>
+        <td background="images/bottom.jpg">&nbsp;</td>
+        <td><img src="images/bottom-right.gif" width="33"
+        height="33"></td>
+        <td>&nbsp;</td>
+        <td><img src="images/bottom-left.gif" width="33"
+        height="33"></td>
+        <td background="images/bottom.jpg">&nbsp;</td>
+        <td><img src="images/bottom-right.gif" width="33"
+        height="33"></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td height="33">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+
+<!--
+<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+Lorem ipsum dolor sit amet consectetur adipisicing elit
+</div></div></div></div></div></div></div></div>
+-->
+
+</body>
+</html>

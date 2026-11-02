@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module_run>
+	<player_reference>
+		black
+	</player_reference>
+	<game_file>
+		game10ab24776894f901768.xml
+	</game_file>
+	<current_round>
+		3
+	</current_round>
+	<input>
+		<board_file>
+			board10ab24b769955f8301.xml
+		</board_file>
+		<armies_left>
+			2
+		</armies_left>
+		<merged_plan_list>
+		</merged_plan_list>
+	</input>
+	<output>
+		<territory>
+			Alberta
+		</territory>
+	</output>
+</module_run>

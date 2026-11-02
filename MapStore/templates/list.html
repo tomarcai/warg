@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block body_class %}applist{% endblock %}
+{%  block content %}
+{% if map_list %}
+    <ul>
+    {% for map in map_list %}
+        <li>
+		<a class="noeffect" href="/maps/{{ map.id }}">
+                    
+                {% if map.imageFile %}
+                  {% thumbnail map.imageFile 150x94 crop as im %}
+                    <span class="image" style="background-image:url('{{ im.url|addslashes }}')">
+                {% endif %}
+
+        </span><span class="comment">{{ map.author.first_name }} {{ map.author.last_name }}</span>
+
+        <span class="name">{{ map.name }}</span>
+
+        <span class="stars{{ map.rating_score }}"></span>
+        <span class="starcomment">Added: {{ map.dateAdded.date }}<!-- TODO: [DOWNLOADS] , {{ map.numberOfDownloads }} Downloads--></span><span class="arrow"></span><span class="price">FREE</span></a></li>
+
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No maps are available.</p>
+{% endif %}
+{% endblock %}
+
+{% block header_bar %}
+<div id="duobutton"><!-- TODO: [DOWNLOADS] <div id="tributton  <a id="pressed" -->
+        <div class="links">
+            <a href="/?sort=TOP_NEW">Newest</a><a href="/?sort=TOP_RATINGS">Best Rated</a><!-- TODO: [DOWNLOADS] <a href="/?order=downloaded">Downloads</a>-->
+        </div>
+</div>
+{% endblock %}
+
+{% block heading %}
+    <div id="leftnav"><a href="/categories/">Categories</a></div>
+{% endblock %}
+

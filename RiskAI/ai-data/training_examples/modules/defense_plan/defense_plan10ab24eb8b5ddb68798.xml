@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defense_plan>
+	<player_reference>
+		red
+	</player_reference>
+	<game_file>
+		game10ab247edeaa2e7cc2b.xml
+	</game_file>
+	<current_round>
+		5
+	</current_round>
+	<data_used>
+		<board_file>
+			board10ab24ead56b17ca0e5.xml
+		</board_file>
+		<nextmove_estimate>
+			Middle-East
+			Afghanistan
+			Ural
+			Siberia
+			Yakutsk
+			Irkutsk
+			Kamchatka
+			Japan
+			Mongolia
+			China
+			India
+			Siam
+			Indonesia
+			Western-Australia
+			Eastern-Australia
+			New-Guinea
+			Ukraine
+			Scandinavia
+			Iceland
+			Great-Britain
+			Northern-Europe
+			Southern-Europe
+			Western-Europe
+			North-Africa
+			Brazil
+			Argentina
+			Peru
+			Venezuela
+		</nextmove_estimate>
+		<goal_distribution>
+			<conquer_and_defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.5
+				</continent>
+				<continent name="Europe">
+					0.5
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</conquer_and_defend_continent>
+			<conquer_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</conquer_continent>
+			<defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</defend_continent>
+			<obstruct_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.0
+				</continent>
+				<continent name="Europe">
+					0.0
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.3
+				</continent>
+			</obstruct_continent>
+			<obstruct_and_defend_continent>
+				<continent name="North-America">
+					0.0
+				</continent>
+				<continent name="South-America">
+					0.4
+				</continent>
+				<continent name="Europe">
+					0.4
+				</continent>
+				<continent name="Africa">
+					0.0
+				</continent>
+				<continent name="Asia">
+					0.0
+				</continent>
+				<continent name="Australia">
+					0.0
+				</continent>
+			</obstruct_and_defend_continent>
+			<attack_player>
+				<player name="black">
+					0.0
+				</player>
+				<player name="red">
+					0.0
+				</player>
+				<player name="green">
+					0.0
+				</player>
+				<player name="blue">
+					0.0
+				</player>
+			</attack_player>
+			<territories_18>
+				0.0
+			</territories_18>
+			<territories_24>
+				0.0
+			</territories_24>
+		</goal_distribution>
+	</data_used>
+	<merged_plan_element>
+		<territory>
+			Central-America
+		</territory>
+		<cost_estimated>
+			8
+		</cost_estimated>
+		<cost_minimum>
+			0
+		</cost_minimum>
+		<priority>
+			0.67499995
+		</priority>
+		<attacker_armies_left>
+			8
+		</attacker_armies_left>
+		<is_defense_plan>
+			true
+		</is_defense_plan>
+		<score>
+			0.002454412
+		</score>
+	</merged_plan_element>
+</defense_plan>

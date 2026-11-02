@@ -1,0 +1,17 @@
+nn // igMission
+nb // igWinning
+nn_wo// igNextMove
+nn // igContinent
+nn // mp
+script // rpPlanner_MakeAttackPlan
+script // rpPlanner_APCost
+nn // rpPlanner_APPriority
+script // rpPlanner_DiscardPlans
+nn_wo // rpPlanner_DeCost
+nb // rpPlanner_DePriority
+script // rpReinforce_CashCards
+script // rpReinforce_PlaceArmies
+dt // rpScorePlan
+random // rpFortify
+nn_wo // rpInitPlacement
+nn // rpScoreMergedPlans

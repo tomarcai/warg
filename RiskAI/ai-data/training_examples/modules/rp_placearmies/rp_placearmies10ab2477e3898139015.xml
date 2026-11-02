@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module_run>
+	<player_reference>
+		red
+	</player_reference>
+	<game_file>
+		game10ab2474e9f68acbd37.xml
+	</game_file>
+	<current_round>
+		1
+	</current_round>
+	<input>
+		<board_file>
+			board10ab2477e3831110395.xml
+		</board_file>
+		<armies_left>
+			3
+		</armies_left>
+		<merged_plan_list>
+		</merged_plan_list>
+	</input>
+	<output>
+		<territory>
+			Western-Australia
+		</territory>
+	</output>
+</module_run>

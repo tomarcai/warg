@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<player name="frame1" color="black" type="AI (Framework)">
+		<mission>
+			24
+		</mission>
+	</player>
+	<player name="easy2" color="red" type="AI (Easy)">
+		<mission>
+			24
+		</mission>
+	</player>
+	<player name="easy3" color="green" type="AI (Easy)">
+		<mission>
+			Asia,Africa
+		</mission>
+	</player>
+	<winner>
+		black
+	</winner>
+	<statistics>
+		<time_used>
+			30.395
+		</time_used>
+		<rounds_played>
+			1
+		</rounds_played>
+		<board_states_saved>
+			37
+		</board_states_saved>
+		<module_runs_saved>
+			62
+		</module_runs_saved>
+	</statistics>
+</game>

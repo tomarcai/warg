@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "783159960229",
+    "firebase_url": "https://api-project-783159960229.firebaseio.com",
+    "project_id": "api-project-783159960229",
+    "storage_bucket": "api-project-783159960229.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783159960229:android:25ae2b83efd7acc5c2234c",
+        "android_client_info": {
+          "package_name": "net.yura.domination"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783159960229-kpsb2fulqdi64012rjot6a2r9vqrd51a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.yura.domination",
+            "certificate_hash": "c91ea12a88071323c2143e5634fe3541d86e05cd"
+          }
+        },
+        {
+          "client_id": "783159960229.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.yura.domination",
+            "certificate_hash": "33800819f1ecadd8b014bb73f95e9061a66ebf50"
+          }
+        },
+        {
+          "client_id": "783159960229-0542gq1ggufjp8abmu8eo8qfg8n9nmbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbgBRioDmGzC1f7V9TSRDg28YBsXp6yjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783159960229-0542gq1ggufjp8abmu8eo8qfg8n9nmbv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "783159960229-lkr32qlp1ig7sm9o97i9htpjjnf6sqqu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.yura.domination"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boardstate>
+	<game_file>
+		game10ab24799852c844f6c.xml
+	</game_file>
+	<territory name="Alaska">
+		<owner>
+			red
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="North-West-Territory">
+		<owner>
+			green
+		</owner>
+		<armies>
+			14
+		</armies>
+	</territory>
+	<territory name="Alberta">
+		<owner>
+			black
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Western-United-States">
+		<owner>
+			white
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Central-America">
+		<owner>
+			blue
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Greenland">
+		<owner>
+			blue
+		</owner>
+		<armies>
+			14
+		</armies>
+	</territory>
+	<territory name="Ontario">
+		<owner>
+			red
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Quebec">
+		<owner>
+			green
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Eastern-United-States">
+		<owner>
+			green
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Venezuela">
+		<owner>
+			white
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Peru">
+		<owner>
+			green
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Brazil">
+		<owner>
+			yellow
+		</owner>
+		<armies>
+			7
+		</armies>
+	</territory>
+	<territory name="Argentina">
+		<owner>
+			yellow
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Iceland">
+		<owner>
+			blue
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Scandinavia">
+		<owner>
+			white
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Ukraine">
+		<owner>
+			yellow
+		</owner>
+		<armies>
+			5
+		</armies>
+	</territory>
+	<territory name="Great-Britain">
+		<owner>
+			black
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Northern-Europe">
+		<owner>
+			blue
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Western-Europe">
+		<owner>
+			yellow
+		</owner>
+		<armies>
+			4
+		</armies>
+	</territory>
+	<territory name="Southern-Europe">
+		<owner>
+			white
+		</owner>
+		<armies>
+			14
+		</armies>
+	</territory>
+	<territory name="North-Africa">
+		<owner>
+			blue
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Egypt">
+		<owner>
+			white
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Congo">
+		<owner>
+			blue
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="East-Africa">
+		<owner>
+			yellow
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="South-Africa">
+		<owner>
+			white
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Madagascar">
+		<owner>
+			red
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Siberia">
+		<owner>
+			black
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Ural">
+		<owner>
+			black
+		</owner>
+		<armies>
+			7
+		</armies>
+	</territory>
+	<territory name="China">
+		<owner>
+			blue
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Afghanistan">
+		<owner>
+			red
+		</owner>
+		<armies>
+			14
+		</armies>
+	</territory>
+	<territory name="Middle-East">
+		<owner>
+			black
+		</owner>
+		<armies>
+			8
+		</armies>
+	</territory>
+	<territory name="India">
+		<owner>
+			black
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Siam">
+		<owner>
+			yellow
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Yakutsk">
+		<owner>
+			yellow
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Irkutsk">
+		<owner>
+			black
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Mongolia">
+		<owner>
+			red
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Japan">
+		<owner>
+			white
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Kamchatka">
+		<owner>
+			red
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Indonesia">
+		<owner>
+			green
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="New-Guinea">
+		<owner>
+			red
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Western-Australia">
+		<owner>
+			green
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+	<territory name="Eastern-Australia">
+		<owner>
+			green
+		</owner>
+		<armies>
+			1
+		</armies>
+	</territory>
+</boardstate>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synth>
+
+    <style id="tabbar">
+	   <state>
+	      <imagePainter path="/ms_tabbar.9.png"/>
+              <color type="BACKGROUND" value="#00FFFFFF"/>
+              <!-- as nimbus background default is a color, we need to clear it -->
+	   </state>
+    </style>
+    <bind style="tabbar" key="TabBar"/>
+
+    <style id="badge">
+	   <state>
+	      <imagePainter path="/ms_ic_notification_overlay.9.png"/>
+	   </state>
+    </style>
+    <bind style="badge" key="Badge"/>
+
+	<style id="indeterminateSpinner">
+		<imageIcon id="spinner_strip" path="/ms_strip.png" frameWidth="20" frameHeight="20"/>
+		<state>
+			<property key="sprite" value="spinner_strip"/>
+		</state>
+	</style>
+	<bind style="indeterminateSpinner" key="ProgressBar"/>
+</synth>

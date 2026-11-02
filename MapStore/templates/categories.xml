@@ -1,0 +1,12 @@
+{% load thumbnail %}<?xml version="1.0"?>
+<Task method="categories">
+  <object>
+    <Vector>
+      {% for category, map in category_tuples %}
+      <Category id="{{ category.id }}"
+                name="{{ category.name }}"
+                iconURL="{% if category.icon %}{{ category.icon.url }}{% else %}{% if map.imageFile %}{% thumbnail map.imageFile 150x94 crop as im %}{{ im.url }}{% endif %}{% endif %}"/>
+      {% endfor %}
+    </Vector>
+  </object>
+</Task>

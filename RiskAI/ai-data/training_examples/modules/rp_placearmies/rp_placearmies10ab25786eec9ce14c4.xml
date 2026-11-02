@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module_run>
+	<player_reference>
+		red
+	</player_reference>
+	<game_file>
+		game10ab25236f6c0bf0418.xml
+	</game_file>
+	<current_round>
+		4
+	</current_round>
+	<input>
+		<board_file>
+			board10ab25786eeab16a7f.xml
+		</board_file>
+		<armies_left>
+			3
+		</armies_left>
+		<merged_plan_list>
+		</merged_plan_list>
+	</input>
+	<output>
+		<territory>
+			Indonesia
+		</territory>
+	</output>
+</module_run>

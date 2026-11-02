@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{%  block content %}
+{% if map %}
+    <ul class="pageitem">
+
+        <li class="textbox">
+            <span class="header">{{  map.name }}</span>
+            By {{  map.author.first_name }} {{  map.author.last_name }}<br/>
+            <p>{{ map.description }}</p>
+            {{ map.dateAdded.date }}
+        </li>
+        <li class="textbox">
+            <img src='{% if map.imageFile %}{{ map.imageFile.url }}{% endif %}' width="320"/>
+        </li>
+
+
+        <li class="textbox">
+            <div class="rateit" data-rateit-resetable="false">
+            </div>
+        </li>
+    </ul>
+
+    <ul class="pageitem">
+
+        <li class="textbox">
+            <a href="/">Download as Zip</a>
+        </li>
+
+    </ul>
+
+
+        <script src="/static/rateit/src/jquery.rateit.js" type="text/javascript"></script>
+{% else %}
+    <p>Map not found</p>
+{% endif %}
+{% endblock %}
+
+
+{%  block extra_header %}
+    <link href="/static/rateit/src/rateit.css" rel="stylesheet" type="text/css">
+{%  endblock %}
+
+{% block heading %}
+    <div id="leftnav"><a href="/maps">Back</a></div>
+{% endblock %}

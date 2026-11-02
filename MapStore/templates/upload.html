@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/upload" enctype="multipart/form-data" method="post">
+
+<span class="graytitle">Author</span>
+
+		<ul class="pageitem">
+
+
+			<li class="bigfield"><input placeholder="{{ authorForm.first_name.label }} {% for error in authorForm.first_name.errors %}- {{ error }}{% endfor %}" name="{{ authorForm.first_name.name }}" value="{{ authorForm.data.first_name }}" type="text" /></li>
+            <li class="bigfield"><input placeholder="{{ authorForm.last_name.label }} {% for error in authorForm.last_name.errors %}- {{ error }}{% endfor %}" name="{{ authorForm.last_name.name }}" value="{{ authorForm.data.last_name }}" type="text" /></li>
+
+		</ul>
+
+<span class="graytitle">Map</span>
+
+    <ul class="pageitem">
+        <li class="bigfield"><input placeholder="{{ mapForm.name.label }} {% for error in mapForm.name.errors %}- {{ error }}{% endfor %}" name="{{ mapForm.name.name }}" value="{{ mapForm.data.name }}" type="text" /></li>
+        <li class="textarea"><textarea style='border:0;font-size:110%;font-weight:bold;margin-left:3px;width:90%' rows="4" placeholder="{{ mapForm.description.label }} {% for error in mapForm.description.errors %}- {{ error }}{% endfor %}" name="{{ mapForm.description.name }}" value="{{ mapForm.data.description }}"></textarea></li>
+
+    </ul>
+
+    <ul class="pageitem">
+        <li class="textbox">{{ mapForm.categories }}</li>
+    </ul>
+
+    <ul class="pageitem">
+        <li class="textbox">{{ zipForm.as_p }}</li>
+    </ul>
+
+
+    <ul class="pageitem">
+        <li class="button"><input type="submit" value="Submit" /></li>
+    </ul>
+
+
+    
+
+</form>
+{%  endblock %}

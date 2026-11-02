@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+      package="net.yura.domination"
+      android:versionCode="108"
+      android:versionName="108"
+      android:installLocation="auto">
+
+    <!-- android:targetSdkVersion 11 to hide the legacy menu button on tablets -->
+    <!-- android:targetSdkVersion 14 to hide the legacy menu button on phones  -->
+    <!-- this also has a side effect of hiding the legacy resize button -->
+    <uses-sdk android:targetSdkVersion="35" />
+
+    <!-- GCM connects to Google Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- online it says i should add this if i want it to vibrate with notifications, but in my own test i did not need it, strange -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--  this is for AdMob -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- to be able to read maps from sd card.
+    	 Note: Starting in API level 33, this permission has no effect.
+    	 more info: https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+
+
+    <!-- these will be used for ADM -->
+    <permission android:name="net.yura.domination.permission.C2D_MESSAGE"/>
+    <!-- App receives GCM messages. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="net.yura.domination.permission.C2D_MESSAGE"/>
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- this means i dont need different assets for different resolutions -->
+    <!-- supports-screens android:anyDensity="false"/ -->
+    <!-- THIS DOES NOT WORK IF hardwareAccelerated=true!!!! -->
+
+    <application android:name="net.yura.android.AndroidMeApp"
+		         android:icon="@drawable/icon"
+		         android:label="@string/app_name"
+		         android:theme="@style/AndroidME.Light.DarkDialog"
+		         android:hardwareAccelerated="true"
+		         android:isGame="true"
+		         android:backupAgent="net.yura.domination.android.TheBackupAgent"
+		         android:usesCleartextTraffic="true"
+		         android:requestLegacyExternalStorage="true"
+		         android:preserveLegacyExternalStorage="true"
+                         tools:targetApi="8">
+
+	<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />
+	<meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIxe-Rf-f53FlB4U2LIu_xF0lTNJfcWOALXBn1VA" />
+
+
+	<!-- these will be used for Amazon Device Messaging (ADM) -->
+	<receiver android:name="net.yura.domination.android.push.ADMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="false">
+	    <intent-filter>
+		<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		<category android:name="net.yura.domination" />
+	    </intent-filter>
+	</receiver>
+	<service android:name="net.yura.domination.android.push.ADMLegacyIntentService"
+            android:exported="false"/>
+	<service android:name="net.yura.domination.android.push.ADMIntentService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+
+	<activity android:name="net.yura.domination.android.GameActivity"
+	  android:launchMode="singleTask"
+	  android:label="@string/app_name"
+	  android:windowSoftInputMode="adjustResize|stateHidden"
+	  android:configChanges="orientation|keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize"
+	  android:exported="true"
+	  android:enableOnBackInvokedCallback="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="net.yura.domination.android.push.PushActivity" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:name="net.yura.domination.android.StatsActivity" android:configChanges="orientation|keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Theme" />
+        <activity android:name="net.yura.domination.android.GamePreferenceActivity" android:configChanges="orientation|keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Dialog" />
+        <activity android:name="net.yura.domination.android.AboutActivity" android:configChanges="orientation|keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Theme" />
+        <activity android:name="com.google.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:name="net.yura.domination.android.ColorPickerActivity" android:configChanges="orientation|keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Dialog" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="net.yura.domination.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <!-- on older versions of android this crashes and pulls the whole app down with it -->
+        <provider
+            android:name = "com.google.firebase.provider.FirebaseInitProvider"
+            android:enabled="@bool/enable_firebase"
+        />
+
+    </application>
+
+</manifest>

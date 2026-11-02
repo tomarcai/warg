@@ -1,0 +1,106 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+
+    dependencies {
+        // last version of AS that supports this is: Narwhal 2025.1.1 that supports AGP 3.2-8.11
+        classpath 'com.android.tools.build:gradle:3.3.3'
+        //classpath 'com.google.gms:google-services:4.3.3'  // Google Services plugin
+    }
+}
+
+apply plugin: 'com.android.application'
+//apply plugin: 'com.google.gms.google-services'
+
+dependencies {
+    implementation project(':sharedUI')
+    implementation project(':AndroidME')
+    // implementation fileTree(include: '*.jar', dir: 'libs')
+    implementation files('libs/achartengine-1.2.0.jar')
+    implementation files('libs/GoogleAdMobAdsSdk-6.4.1.jar')
+    implementation files('libs/GrasshopperAndroid.jar')
+    compileOnly files('libs/amazon-device-messaging-1.2.0.jar')
+    implementation 'androidx.annotation:annotation:1.10.0'
+    implementation 'androidx.core:core:1.13.1' // for FileProvider
+    implementation 'com.google.android.gms:play-services-auth:21.4.0'
+    implementation 'com.google.android.gms:play-services-games:20.0.0'
+    implementation 'com.google.android.play:app-update:2.1.0'
+    // for classes used in AboutActivity
+    implementation 'androidx.documentfile:documentfile:1.1.0'
+}
+
+android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+        encoding = "cp1252"
+    }
+
+    // updating to 35 may require a update of the gradle plugin!!
+    compileSdkVersion 34
+    buildToolsVersion '34.0.0'
+    // this to to avoid error from httpcore-4.1.2.jar and httpcore-4.1.2.jar having the same file
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/androidx/annotation/annotation/LICENSE.txt'
+        exclude 'META-INF/com.android.tools/proguard/coroutines.pro'
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = []
+            res.srcDirs = ['res', '../sharedUI/img_mini_game_ui', '../sharedUI/img_mapstore_lobby']
+            assets.srcDirs = ['assets']
+        }
+    }
+    // this is to avoid the @TargetApi missing on methods giving errors.
+    lintOptions {
+        abortOnError false
+    }
+    defaultConfig {
+        minSdkVersion 4
+    }
+
+    signingConfigs {
+        Properties localProperties = new Properties()
+        rootProject.file('local.properties').with { if (exists()) localProperties.load(new FileInputStream(it)) }
+
+        SignConfig {
+            keyAlias 'yura.net key'
+            keyPassword localProperties['keyPassword'] ?: "password"
+            storeFile file('key')
+            storePassword localProperties['storePassword'] ?: "password"
+        }
+    }
+    if (signingConfigs.SignConfig.storeFile.exists()) {
+        logger.lifecycle("USING KEY TO SIGN FROM 'key' FILE!!")
+        buildTypes {
+            debug {
+                signingConfig signingConfigs.SignConfig
+            }
+            release {
+                signingConfig signingConfigs.SignConfig
+            }
+        }
+    }
+}
+
+// same as ant tasks "setup.android"
+task copyAssets(type: Copy) {
+    from('../swingUI/game/Domination') {
+        include 'maps/**'
+        include 'help/**'
+        include 'sound/**'
+    }
+    from('../src/META-INF') {
+        include 'services/**'
+    }
+    from '../gpl.txt'
+    from '../ChangeLog.txt'
+    into 'assets'
+}
+project.preBuild.dependsOn(copyAssets)

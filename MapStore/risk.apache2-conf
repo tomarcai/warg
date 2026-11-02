@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+	ServerAdmin yura@yura.net
+	ServerName maps.yura.net
+	DocumentRoot /var/www/risk
+	WSGIScriptAlias / /var/www/risk/django.wsgi
+
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+
+                RewriteEngine on
+                RewriteRule storage/(.*?\.map)$ /count?url=$1 [B,L]
+	</Directory>
+	
+	ErrorLog /var/log/apache2/risk-error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel debug 
+
+	CustomLog /var/log/apache2/risk-access.log combined
+</VirtualHost>
+

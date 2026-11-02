@@ -1,0 +1,46 @@
+{% load thumbnail %}{% load riskmaps_extras %}<?xml version="1.0" encoding="UTF-8" ?>
+<Task method="maps">
+  <object>
+    <Hashtable category="{{ search_category.id }}" search="{{ search_text }}" author="{{ search_author.id }}">
+      <entry>
+        <String value="total"/>
+        <Integer value="{{ map_list.count }}"/>
+      </entry>
+
+      <!-- TODO: Offsets
+      <entry>
+        <String value="offset"/>
+        <Integer value="0"/>
+      </entry>
+      -->
+
+      <entry>
+        <String value="maps"/>
+        <Vector>{% for map in map_list %}
+            <Map
+            id="{{ map.id }}"
+            name="{{ map.name }}"
+            authorId="{{ map.author.id }}"
+            authorName="{{ map.author.get_full_name }}"
+            numberOfDownloads="{{ map.numberOfDownloads }}"
+            rating="0"
+            numberOfRatings="0"
+	   {% if map.imageFile %}
+	    {% thumbnail map.imageFile 150x94 crop as im %}
+            previewUrl="{{ im.url }}"
+	   {% endif %}
+            mapUrl="/storage/{{ map.mapFile }}"
+            description="{{ map.description|xmlattr }}"
+            version="{{ map.version }}"
+            dateAdded="{{ map.dateAdded|date:"U" }}"
+           {% if map.imageFile %}
+	    mapWidth="{{ map.image_width }}"
+            mapHeight="{{ map.image_height }}"
+	   {% endif %}
+	    />
+        {% endfor %}</Vector>
+      </entry>
+        
+    </Hashtable>
+  </object>
+</Task>

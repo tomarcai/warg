@@ -1,0 +1,54 @@
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+}
+
+apply plugin: 'java-library'
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = "cp1252"
+}
+// this is needed for tests to run and not complain
+compileTestJava {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = "cp1252"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['src']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+        }
+        resources {
+            srcDirs = ['sharedUI/res_mini_game_ui']
+            include 'net/yura/domination/engine/settings.ini'
+        }
+    }
+}
+
+test {
+    // for now we hard code it to run in the same location as when ant runs the same tests
+    workingDir = file('swingUI')
+}
+
+dependencies {
+    // some things are broken when moving to org.apache.httpcomponents:http 4.2+
+    implementation 'org.apache.httpcomponents:httpcore:4.1.2'
+    implementation 'org.apache.httpcomponents:httpmime:4.1.2'
+
+    testImplementation 'junit:junit:4.13.2'
+}
