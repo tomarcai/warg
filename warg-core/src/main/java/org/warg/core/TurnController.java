@@ -2,7 +2,7 @@ package org.warg.core;
 
 /**
  * Incremental, independent turn controller modeled on Domination r2844's
- * phase transitions. Does not yet resolve combat, setup, cards or turn rotation.
+ * phase transitions. Does not yet implement setup, cards or turn rotation.
  *
  * This is an explicit subset, not a complete RiskGame replacement.
  */
@@ -22,6 +22,8 @@ public final class TurnController {
     private int attackingDice;
     private int defendingDice;
     private String defenderPlayer;
+    private int mustMove;
+    private int battleRounds;
 
     /**
      * Begin after initial setup, with the player and earned reinforcements
@@ -45,6 +47,8 @@ public final class TurnController {
     public String defendingPlayer() { return defenderPlayer; }
     public int attackingDice() { return attackingDice; }
     public int defendingDice() { return defendingDice; }
+    public int mustMove() { return mustMove; }
+    public int battleRounds() { return battleRounds; }
 
     /**
      * Domination r2844 placeArmy after initial setup accepts a quantity that
@@ -74,6 +78,7 @@ public final class TurnController {
             defendingTo = target;
             defenderPlayer = board.territory(target).owner();
             attackingDice = defendingDice = 0;
+            battleRounds = mustMove = 0;
             phase = Phase.ROLLING;
             return true;
         }
@@ -96,7 +101,72 @@ public final class TurnController {
         return true;
     }
 
-    /** A combat resolution engine must be introduced before battle transitions. */
+
+    /**
+     * Completes one round using already rolled, descending, zero-based dice.
+     * The combat RNG remains outside this class; no synthetic dice are made.
+     * Ownership transfers immediately on conquest, before compulsory movement,
+     * matching RiskGame.battle(). Player cards and statistics are not modeled.
+     */
+    public CombatResult battle(int[] attackRoll, int[] defenseRoll) {
+        if (phase != Phase.DEFEND_YOURSELF || attackingDice == 0 || defendingDice == 0)
+            throw new IllegalStateException("battle is not ready");
+        if (attackRoll == null || defenseRoll == null
+                || attackRoll.length != attackingDice || defenseRoll.length != defendingDice)
+            throw new IllegalArgumentException("dice lengths differ from selected counts");
+
+        BattleRound.Losses losses = BattleRound.resolve(attackRoll, defenseRoll);
+        Board.Territory from = board.territory(attackingFrom);
+        Board.Territory to = board.territory(defendingTo);
+        if (from.armies() <= losses.attacker || to.armies() < losses.defender)
+            throw new IllegalStateException("invalid army counts for battle");
+        board.occupy(attackingFrom, activePlayer, from.armies() - losses.attacker);
+        board.occupy(defendingTo, defenderPlayer, to.armies() - losses.defender);
+        battleRounds++;
+        attackingDice = defendingDice = 0;
+
+        if (to.armies() == 0) {
+            int maxMove = from.armies() - 1;
+            mustMove = attackRoll.length;
+            // Due to selected dice limits, maxMove cannot be below mustMove.
+            board.occupy(defendingTo, activePlayer, 0);
+            phase = Phase.BATTLE_WON;
+            return new CombatResult(losses.attacker, losses.defender, true,
+                    board.ownedTerritories(defenderPlayer) == 0, mustMove, maxMove);
+        }
+        if (from.armies() == 1) {
+            clearBattle();
+            phase = Phase.ATTACKING;
+        }
+        else {
+            phase = Phase.ROLLING;
+        }
+        return new CombatResult(losses.attacker, losses.defender, false, false, 0, 0);
+    }
+
+    /**
+     * Complete the compulsory post-conquest movement.
+     * Returns false on illegal quantities without mutating the board.
+     */
+    public boolean moveAfterConquest(int amount) {
+        if (phase != Phase.BATTLE_WON || mustMove < 1) return false;
+        Board.Territory from = board.territory(attackingFrom);
+        Board.Territory to = board.territory(defendingTo);
+        if (amount < mustMove || amount >= from.armies()
+                || amount > Integer.MAX_VALUE - to.armies()) return false;
+        board.occupy(attackingFrom, activePlayer, from.armies() - amount);
+        board.occupy(defendingTo, activePlayer, to.armies() + amount);
+        clearBattle();
+        phase = Phase.ATTACKING; // trade-card cap and victory pending integration
+        return true;
+    }
+
+    public int moveAllAfterConquest() {
+        return phase == Phase.BATTLE_WON && mustMove > 0
+                ? board.territory(attackingFrom).armies() - 1 : -1;
+    }
+
+
     public boolean retreat() {
         if (phase != Phase.ROLLING) return false;
         clearBattle();
@@ -130,5 +200,6 @@ public final class TurnController {
     private void clearBattle() {
         attackingFrom = defendingTo = defenderPlayer = null;
         attackingDice = defendingDice = 0;
+        mustMove = 0;
     }
 }
