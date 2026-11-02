@@ -6,5 +6,8 @@ trap 'rm -rf "$BUILD"' EXIT HUP INT TERM
 javac -encoding UTF-8 -d "$BUILD" \
   "$ROOT/warg-core/src/main/java/org/warg/core/Rules.java" \
   "$ROOT/warg-core/src/main/java/org/warg/core/BattleRound.java" \
-  "$ROOT/warg-core/src/test/java/org/warg/core/ParitySmokeTest.java"
+  "$ROOT/warg-core/src/main/java/org/warg/core/Board.java" \
+  "$ROOT/warg-core/src/test/java/org/warg/core/ParitySmokeTest.java" \
+  "$ROOT/warg-core/src/test/java/org/warg/core/BoardTest.java"
 java -cp "$BUILD" org.warg.core.ParitySmokeTest
+java -cp "$BUILD" org.warg.core.BoardTest
