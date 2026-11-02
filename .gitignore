@@ -1,0 +1,24 @@
+# Salidas de build (Gradle / Ant / Android)
+build/
+.gradle/
+local.properties
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+nbproject/private/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python (MapStore)
+__pycache__/
+*.pyc
+
+# OJO: NO ignorar "._*". Los ficheros AppleDouble de
+# Domination/swingUI/res/scripts/ contienen los iconos de macOS y
+# swingUI/build.xml los empaqueta a propósito.
