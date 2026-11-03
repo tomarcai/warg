@@ -19,6 +19,7 @@
     <nav class="menu-list">
       <button class="menu-item" id="btn-new" data-t="mainmenu.newgame">Nueva partida</button>
       <button class="menu-item" id="btn-load" data-t="mainmenu.loadgame">Cargar partida</button>
+      <button class="menu-item" id="btn-editor" data-t="editor.title">Editor de mapas</button>
       <button class="menu-item" id="btn-help" data-t="mainmenu.help">Ayuda</button>
       <button class="menu-item" id="btn-about" data-t="mainmenu.about">Acerca de</button>
     </nav>
@@ -104,6 +105,7 @@
       <button role="tab" data-view="5" data-t="game.tabs.connectedempire">Imperio conectado</button>
     </nav>
     <div class="tools">
+      <button class="tool" id="t-names" aria-pressed="false" data-t="warg.names">Nombres</button>
       <button class="tool" id="t-stats" data-t-title="game.button.statistics" data-t="game.button.statistics">Estadísticas</button>
       <button class="tool" id="t-cards" data-t-title="game.button.cards" data-t="game.button.cards">Cartas</button>
       <button class="tool" id="t-mission" data-t-title="game.button.mission" data-t="game.button.mission">Misión</button>
@@ -112,7 +114,7 @@
     </div>
   </header>
   <div class="map-stage" id="map-stage">
-    <canvas id="map-canvas"></canvas>
+    <svg id="map-canvas" class="vmap" role="img" aria-label="Mapa"></svg>
     <div id="hover-name" class="hover-name" hidden></div>
     <div id="toast" class="toast" hidden></div>
   </div>
@@ -129,6 +131,62 @@
     <pre id="log" class="log" aria-live="polite"></pre>
     <form id="cmd-form" class="cmd"><span>&gt;</span><input id="cmd" autocomplete="off" spellcheck="false" aria-label="Comando"></form>
   </details>
+</section>
+
+<!-- map editor -->
+<section id="screen-editor" class="screen editor" hidden>
+  <header class="ed-head">
+    <h2 data-t="editor.title">Editor de mapas</h2>
+    <div class="ed-actions">
+      <button class="btn ghost" id="ed-new" data-t="editor.new">Nuevo</button>
+      <button class="btn ghost" id="ed-open" data-t="editor.open">Abrir</button>
+      <button class="btn ghost" id="ed-fit" data-t="editor.fit">Ajustar vista</button>
+      <button class="btn primary" id="ed-save" data-t="editor.save">Guardar mapa</button>
+      <button class="btn ghost" id="ed-exit" data-t="editor.exit">Salir</button>
+    </div>
+  </header>
+  <div class="ed-body">
+    <div class="ed-stage">
+      <svg id="ed-svg" class="ed-svg" aria-label="Editor"></svg>
+      <div id="ed-hint" class="ed-hint"></div>
+    </div>
+    <aside class="ed-panel">
+      <section>
+        <h3 data-t="editor.tools">Herramientas</h3>
+        <div class="ed-tools" role="radiogroup">
+          <label><input type="radio" name="ed-tool" value="select" checked> <span data-t="editor.tool.select">Seleccionar y editar</span> <kbd>V</kbd></label>
+          <label><input type="radio" name="ed-tool" value="draw"> <span data-t="editor.tool.draw">Dibujar territorio</span> <kbd>D</kbd></label>
+          <label><input type="radio" name="ed-tool" value="part"> <span data-t="editor.tool.part">Añadir parte (isla)</span> <kbd>P</kbd></label>
+          <label><input type="radio" name="ed-tool" value="connect"> <span data-t="editor.tool.connect">Conectar vecinos</span> <kbd>C</kbd></label>
+          <label><input type="radio" name="ed-tool" value="label"> <span data-t="editor.tool.label">Posición de las tropas</span> <kbd>T</kbd></label>
+        </div>
+      </section>
+      <section id="ed-terr"></section>
+      <section>
+        <h3 data-t="editor.continents">Continentes</h3>
+        <div id="ed-conts"></div>
+        <button class="btn" id="ed-add-cont" type="button" data-t="editor.addcontinent">Añadir continente</button>
+      </section>
+      <section>
+        <h3 data-t="editor.map">Mapa</h3>
+        <label class="field"><span data-t="editor.mapname">Nombre</span><input id="ed-name" maxlength="60"></label>
+        <div class="ed-size">
+          <label class="field"><span data-t="editor.width">Ancho</span><input id="ed-w" type="number" min="100" max="4000"></label>
+          <label class="field"><span data-t="editor.height">Alto</span><input id="ed-h" type="number" min="100" max="4000"></label>
+        </div>
+        <label class="field"><span data-t="editor.background">Imagen de referencia (no se guarda)</span><input id="ed-bg" type="file" accept="image/*"></label>
+        <label class="field"><span data-t="editor.bgopacity">Opacidad de la imagen</span><input id="ed-bg-op" type="range" min="0" max="1" step="0.05" value="0.5"></label>
+      </section>
+      <section>
+        <h3 data-t="editor.territories">Territorios</h3>
+        <ul id="ed-list" class="ed-list"></ul>
+      </section>
+      <section>
+        <h3 data-t="editor.problems">Comprobación</h3>
+        <ul id="ed-problems" class="ed-problems"></ul>
+      </section>
+    </aside>
+  </div>
 </section>
 
 <div id="modal-root"></div>

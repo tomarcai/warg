@@ -10,6 +10,8 @@ export const REPO = path.resolve(ROOT, '..');
 
 export const PATHS = {
   maps: process.env.WARG_MAPS || path.join(REPO, 'Domination', 'swingUI', 'game', 'Domination', 'maps'),
+  customMaps: process.env.WARG_CUSTOM_MAPS || path.join(ROOT, 'maps-custom'),
+  vector: path.join(ROOT, 'vector'),
   translations: process.env.WARG_TRANSLATIONS || path.join(REPO, 'Domination', 'src', 'net', 'yura', 'domination', 'engine', 'translation'),
   extraTranslations: path.join(ROOT, 'resources', 'translation'),
   sounds: path.join(REPO, 'Domination', 'swingUI', 'game', 'Domination', 'sound'),
@@ -46,6 +48,9 @@ async function readOrNull(file, decode) {
 export function createNodeIo(paths = PATHS) {
   return {
     async readMap(name) {
+      // maps made with the editor first, then the original Domination maps
+      const custom = await readOrNull(safeJoin(paths.customMaps, name), decodeMapBuffer);
+      if (custom != null) return custom;
       return readOrNull(safeJoin(paths.maps, name), decodeMapBuffer);
     },
     async readResource(name) {

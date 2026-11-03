@@ -10,6 +10,7 @@ import { browserIo, listMaps, listSaves, deleteSave } from './browserIo.js';
 import { MapView, NO_COUNTRY } from './mapView.js';
 import { openDialog, el, alertDialog, confirmDialog } from './dialogs.js';
 import { sound } from './sound.js';
+import { initEditor } from './editor.js';
 
 // ------------------------------------------------------------------ preferences
 
@@ -53,17 +54,22 @@ async function setLanguage(l) {
   document.querySelectorAll('[data-t-title]').forEach((e) => { e.title = t(e.dataset.tTitle); });
   document.getElementById('cmd').placeholder = t('warg.console.hint');
   document.getElementById('lang-select').value = l;
+  if (typeof editor !== 'undefined') editor.retranslate();
 }
 
 // ------------------------------------------------------------------ screens
 
 const $ = (id) => document.getElementById(id);
 function show(screen) {
-  for (const s of ['screen-menu', 'screen-setup', 'screen-game']) $(s).hidden = s !== screen;
+  for (const s of ['screen-menu', 'screen-setup', 'screen-game', 'screen-editor']) $(s).hidden = s !== screen;
   if (screen === 'screen-game') mapView.resize();
 }
 
 const mapView = new MapView($('map-canvas'), risk);
+const editor = initEditor({
+  t: (...a) => t(...a), show, openDialog, el, alertDialog, confirmDialog,
+  onSaved: () => { setup.maps = []; },
+});
 window.wargMap = mapView;
 
 // ------------------------------------------------------------------ state of the game screen
@@ -907,16 +913,21 @@ async function resetPlayers() {
 function renderMaps() {
   const game = risk.getGame();
   const list = $('map-list');
+  const preview = (m) => (m.prv ? '/maps/preview/' + encodeURIComponent(m.prv) : '/api/preview/' + encodeURIComponent(m.file) + '.svg');
   list.replaceChildren(...setup.maps.map((m) => el('button', {
-    class: 'map-card',
+    class: 'map-card' + (m.custom ? ' custom' : ''),
     type: 'button',
     role: 'option',
     'aria-selected': String(game && game.getMapFile() === m.file),
     onclick: () => risk.parser('choosemap ' + m.file),
   },
-  el('img', { src: m.prv ? '/maps/preview/' + encodeURIComponent(m.prv) : '/maps/' + encodeURIComponent(m.pic), alt: '', loading: 'lazy' }),
+  el('img', { src: preview(m), alt: '', loading: 'lazy' }),
   el('span', { class: 'mc-name' }, m.name || m.file),
-  el('span', { class: 'mc-meta' }, `${m.countries} · ${m.continents}`))));
+  el('span', { class: 'mc-meta' }, t('warg.mapmeta', m.countries, m.continents) + (m.custom ? ' — ' + t('editor.yours') : '')))),
+  el('button', {
+    class: 'map-card new-map', type: 'button',
+    onclick: () => { risk.parser('closegame'); setTimeout(() => editor.openNew(), 50); },
+  }, el('span', { class: 'plus', 'aria-hidden': 'true' }, '+'), el('span', { class: 'mc-name' }, t('editor.create'))));
 }
 
 function renderPlayers() {
@@ -1104,6 +1115,7 @@ function wire() {
   $('btn-load').addEventListener('click', () => { sound.play('button'); showLoad(); });
   $('btn-help').addEventListener('click', () => window.open('/help/index.htm', '_blank', 'noopener'));
   $('btn-about').addEventListener('click', showAbout);
+  $('btn-editor').addEventListener('click', () => { sound.play('button'); editor.openNew(); });
   $('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
 
   $('setup-cancel').addEventListener('click', () => { sound.play('back_button'); risk.parser('closegame'); });
@@ -1128,7 +1140,17 @@ function wire() {
     document.querySelectorAll('.views button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
     mapView.setView(parseInt(b.dataset.view, 10));
   }));
-  document.querySelector('.views button[data-view="0"]').setAttribute('aria-selected', 'true');
+  document.querySelector('.views button[data-view="1"]').setAttribute('aria-selected', 'true');
+  const namesBtn = $('t-names');
+  const names = prefs.get('showNames', false);
+  mapView.setShowNames(names);
+  namesBtn.setAttribute('aria-pressed', String(names));
+  namesBtn.addEventListener('click', () => {
+    const on = namesBtn.getAttribute('aria-pressed') !== 'true';
+    namesBtn.setAttribute('aria-pressed', String(on));
+    mapView.setShowNames(on);
+    prefs.set('showNames', on);
+  });
 
   $('go').addEventListener('click', goOn);
   $('t-stats').addEventListener('click', showStats);
