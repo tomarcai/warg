@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WARG — Command Center</title><link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header><div class="brand"><span class="brand-mark">W</span><div><strong>WARG</strong><small>TACTICAL COMMAND CENTER · NODE EDITION</small></div></div><div class="system-status"><span class="green-dot"></span><span>LOCAL OPERATIONS</span><span class="version">ALPHA 0.1</span></div></header>
+<div class="layout">
+<aside class="panel left">
+ <div class="section-heading"><span>01 / MANDO</span><span>CONFIGURACIÓN</span></div>
+ <div id="setup">
+  <p class="muted">Añade entre 2 y 6 comandantes. Los turnos se realizan en este dispositivo.</p>
+  <div class="input-line"><input id="playerName" maxlength="24" placeholder="Nombre del comandante"><select id="playerColor"><option value="#74c69d">Verde</option><option value="#e9c46a">Arena</option><option value="#e76f51">Rojo</option><option value="#5ca8d6">Azul</option><option value="#b594db">Púrpura</option><option value="#f4a261">Naranja</option></select></div>
+  <button id="addPlayer">+ AÑADIR COMANDANTE</button><button id="start" class="primary">INICIAR OPERACIÓN</button>
+ </div>
+ <div id="players"></div>
+ <div class="section-heading spaced"><span>02 / ORDEN ACTUAL</span></div>
+ <div id="objective" class="objective">Esperando configuración…</div>
+ <div id="actions"></div>
+ <div class="section-heading spaced"><span>03 / BITÁCORA</span></div>
+ <div id="events"></div>
+</aside>
+<main>
+ <div class="map-title"><div><span class="eyebrow">THEATER OF OPERATIONS</span><h1>WORLD DOMINATION <em> / 001</em></h1></div><div class="coordinate">MAP DATA · DOMINATION r2844</div></div>
+ <div class="map-frame"><div id="world" aria-label="Mapa mundial interactivo"></div><div class="map-bottom"><span>◉ LIVE TACTICAL MAP</span><span id="mapSummary">42 TERRITORIES</span></div></div>
+ <div class="foot-note">SELECCIONA UN TERRITORIO EN EL MAPA PARA EMITIR ÓRDENES. EL MOTOR VALIDA TODAS LAS ACCIONES.</div>
+ <section class="territory-section"><div class="section-heading"><span>04 / TERRITORIOS</span><span>LISTADO TÁCTICO</span></div><div id="territories"></div></section>
+</main>
+<aside class="panel right">
+ <div class="section-heading"><span>ESTADO OPERATIVO</span><span>EN VIVO</span></div>
+ <div class="metric"><small>FASE</small><strong id="phase">NUEVA PARTIDA</strong></div>
+ <div class="metric"><small>TURNO</small><strong id="turn">—</strong></div>
+ <div class="metric"><small>RESERVAS</small><strong id="reserve">—</strong></div>
+ <div class="metric"><small>TERRITORIOS PROPIOS</small><strong id="ownTerritories">—</strong></div>
+ <div class="section-heading spaced"><span>INFORMACIÓN DE MISIÓN</span></div><p id="help" class="muted">Los controles cambian según la fase.</p>
+ <button id="reset" class="ghost">REINICIAR PARTIDA</button>
+ <div class="credits">Inspirado en Domination de Yura Mamyrin (r2844). Reimplementación independiente en Node.js. GPLv3.</div>
+</aside>
+</div><script type="module" src="/app.js"></script>
+</body></html>
