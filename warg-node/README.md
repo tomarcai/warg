@@ -70,7 +70,7 @@ El motor es el mismo módulo en el navegador y en Node, así que el modo en red 
 - Las partidas se guardan en JSON, no en el formato de serialización de Java (no se pueden abrir `.save` del juego Java).
 - La animación de fin de partida usa una física de bolas simplificada.
 - El mapa se dibuja con polígonos en vez de con la imagen original, y los mapas creados con el editor necesitan al menos 6 territorios (con menos, la regla original da 0 ejércitos iniciales).
-- Sin juego en red, lobby, editor de mapas ni tienda de mapas en esta versión.
+- Sin juego en red, lobby ni tienda de mapas en esta versión.
 
 ## Licencia
 
