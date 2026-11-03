@@ -32,9 +32,16 @@ export class Session {
     result=g.start();
     if(result){
      this.shuffle(g.deck);
+     g.current=Math.floor(Math.random()*g.players.length);
      if(g.mode===MODE.MISSION){
       const missions=this.shuffle([...g.missions]);
       for(const player of g.players)player.mission=missions.pop();
+     }
+     if(g.mode===MODE.MISSION||this.options.autoplaceAll){
+      for(const c of this.shuffle([...g.countries])){
+       if(!g.place(c.id,1))throw Error('Initial auto-placement failed');
+       if(!g.endTurn())throw Error('Initial turn rotation failed');
+      }
      }
     }
     break;
@@ -56,7 +63,10 @@ export class Session {
    case 'endAttack':result=g.endAttack();break;
    case 'fortify':result=g.fortify(args.from,args.to,args.armies);break;
    case 'skipFortify':result=g.skipFortify();break;
-   case 'setCapital':result=g.setCapital(args.countryId);break;
+   case 'setCapital':
+    result=g.setCapital(args.countryId);
+    if(result)g.deck=g.deck.filter(c=>c.countryId!==args.countryId);
+    break;
    case 'trade':result=g.trade(args.indices);break;
    case 'endTrade':result=g.endTrade();break;
   }
