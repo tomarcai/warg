@@ -24,7 +24,7 @@ public final class CardsAndPlayersTest {
         eq(10, CardTradeRules.value(FIXED, 0, INFANTRY, CAVALRY, CANNON), "fixed distinct");
         eq(10, CardTradeRules.value(FIXED, 0, WILDCARD, WILDCARD, INFANTRY), "fixed two wild");
         eq(12, CardTradeRules.value(FIXED, 0, WILDCARD, WILDCARD, WILDCARD), "fixed all wild");
-        eq(0, CardTradeRules.value(FIXED, 0, WILDCARD, CANNON, INFANTRY), "fixed wild mixed");
+        eq(10, CardTradeRules.value(FIXED, 0, WILDCARD, CANNON, INFANTRY), "fixed wild mixed");
         eq(8, CardTradeRules.value(ITALIAN, 0, CAVALRY, CAVALRY, CAVALRY), "Italian cavalry");
         eq(6, CardTradeRules.value(ITALIAN, 0, INFANTRY, INFANTRY, INFANTRY), "Italian infantry");
         eq(4, CardTradeRules.value(ITALIAN, 0, CANNON, CANNON, CANNON), "Italian cannon");
