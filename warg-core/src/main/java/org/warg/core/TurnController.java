@@ -14,6 +14,7 @@ public final class TurnController {
 
     private final Board board;
     private final Rules rules;
+    private final PlayerRoster roster;
     private final String activePlayer;
     private Phase phase;
     private int unplaced;
@@ -30,8 +31,18 @@ public final class TurnController {
      * supplied by a future game-level turn scheduler.
      */
     public TurnController(Board board, Rules rules, String activePlayer, int reinforcements) {
+        this(board, rules, activePlayer, reinforcements, null);
+    }
+
+    /**
+     * When supplied, the player roster receives elimination credits and cards.
+     * An absent roster supports standalone rule tests but cannot track cards.
+     */
+    public TurnController(Board board, Rules rules, String activePlayer, int reinforcements, PlayerRoster roster) {
         if (board == null || rules == null || activePlayer == null || activePlayer.trim().isEmpty()
                 || reinforcements < 0) throw new IllegalArgumentException("invalid turn setup");
+        if (roster != null) roster.get(activePlayer);
+        this.roster = roster;
         this.board = board;
         this.rules = rules;
         this.activePlayer = activePlayer;
@@ -77,6 +88,7 @@ public final class TurnController {
             attackingFrom = source;
             defendingTo = target;
             defenderPlayer = board.territory(target).owner();
+            if (roster != null) roster.get(defenderPlayer);
             attackingDice = defendingDice = 0;
             battleRounds = mustMove = 0;
             phase = Phase.ROLLING;
@@ -130,9 +142,11 @@ public final class TurnController {
             mustMove = attackRoll.length;
             // Due to selected dice limits, maxMove cannot be below mustMove.
             board.occupy(defendingTo, activePlayer, 0);
+            boolean eliminated = board.ownedTerritories(defenderPlayer) == 0;
+            if (eliminated && roster != null) roster.eliminate(activePlayer, defenderPlayer);
             phase = Phase.BATTLE_WON;
             return new CombatResult(losses.attacker, losses.defender, true,
-                    board.ownedTerritories(defenderPlayer) == 0, mustMove, maxMove);
+                    eliminated, mustMove, maxMove);
         }
         if (from.armies() == 1) {
             clearBattle();
@@ -157,7 +171,8 @@ public final class TurnController {
         board.occupy(attackingFrom, activePlayer, from.armies() - amount);
         board.occupy(defendingTo, activePlayer, to.armies() + amount);
         clearBattle();
-        phase = Phase.ATTACKING; // trade-card cap and victory pending integration
+        phase = roster != null && roster.requiresForcedTrade(activePlayer)
+                ? Phase.TRADE_CARDS : Phase.ATTACKING; // actual trading is pending
         return true;
     }
 
