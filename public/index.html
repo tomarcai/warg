@@ -12,6 +12,12 @@
  <div id="setup">
   <p class="muted">Añade entre 2 y 6 comandantes. Los turnos se realizan en este dispositivo.</p>
   <div class="input-line"><input id="playerName" maxlength="24" placeholder="Nombre del comandante"><select id="playerColor"><option value="#74c69d">Verde</option><option value="#e9c46a">Arena</option><option value="#e76f51">Rojo</option><option value="#5ca8d6">Azul</option><option value="#b594db">Púrpura</option><option value="#f4a261">Naranja</option></select></div>
+  <label class="config-label" for="gameMode">MODO DE PARTIDA</label>
+  <select id="gameMode" class="config-field"><option value="0">Dominación mundial</option><option value="2">Capitales</option><option value="3">Misión secreta</option></select>
+  <label class="config-label" for="cardMode">REGLAS DE CARTAS</label>
+  <select id="cardMode" class="config-field"><option value="0">Canje progresivo</option><option value="1">Canje fijo</option><option value="2">Modalidad italiana</option></select>
+  <label class="check-line"><input id="autoplaceAll" type="checkbox"> Repartir territorios automáticamente</label>
+  <label class="check-line"><input id="recycleCards" type="checkbox"> Reciclar cartas utilizadas</label>
   <button id="addPlayer">+ AÑADIR COMANDANTE</button><button id="start" class="primary">INICIAR OPERACIÓN</button>
  </div>
  <div id="players"></div>
