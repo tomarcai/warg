@@ -79,9 +79,9 @@ export class Session {
    case 'trade':result=g.trade(args.indices);break;
    case 'endTrade':result=g.endTrade();break;
   }
-  if(result===false||result===null||result===0)return {ok:false,result,state:g.snapshot()};
+  if(result===false||result===null||result===0)return {ok:false,result,state:this.game.snapshot()};
   this.log(action,result);
-  return {ok:true,result,state:g.snapshot()};
+  return {ok:true,result,state:this.game.snapshot()};
  }
  snapshot(){return {...this.game.snapshot(),map:{name:this.map.name,continents:this.map.continents},events:this.events};}
 }
