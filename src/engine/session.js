@@ -1,5 +1,5 @@
 import {Game,STATE,MODE} from './game.js';
-export const ACTIONS=Object.freeze(['addPlayer','start','place','endTurn','attack','rollAttack','rollDefend','battle','moveConquered','retreat','endAttack','fortify','skipFortify','setCapital','trade','endTrade']);
+export const ACTIONS=Object.freeze(['configure','addPlayer','start','place','endTurn','attack','rollAttack','rollDefend','battle','moveConquered','retreat','endAttack','fortify','skipFortify','setCapital','trade','endTrade']);
 /**
  * Local game coordinator. Never accept fabricated dice arrays via the public API.
  * Domination's Risk.java coordinates random CARD and DICE commands.
@@ -27,6 +27,15 @@ export class Session {
   const g=this.game;
   let result;
   switch(action){
+   case 'configure':{
+    if(g.state!==STATE.NEW){result=false;break;}
+    const mode=Number(args.mode??0),cardMode=Number(args.cardMode??0);
+    if(![0,2,3].includes(mode)||![0,1,2].includes(cardMode)){result=false;break;}
+    const settings={mode,cardMode,autoplaceAll:args.autoplaceAll===true,recycleCards:args.recycleCards===true};
+    const next=new Game(this.map,{...settings,cards:this.cards.cards,missions:this.cards.missions});
+    for(const p of g.players)next.addPlayer(p.name,p.color,p.type);
+    this.options=settings;this.game=next;result=true;break;
+   }
    case 'addPlayer':result=g.addPlayer(args.name,args.color,args.type);break;
    case 'start':
     result=g.start();
