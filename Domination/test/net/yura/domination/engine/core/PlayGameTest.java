@@ -11,8 +11,11 @@ import org.junit.rules.TestRule;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class PlayGameTest {
+
+    private static final long REPLAY_TIMEOUT_MS = 60000;
 
     @Rule
     public TestRule failOnWarnings = new FailOnWarningsRule();
@@ -90,13 +93,23 @@ public class PlayGameTest {
 
         risk.parserAndWait("play " + file.getPath()); // maybe getAbsolutePath() for full path
 
-        // keep waiting untill we have a running game
-        while (risk.getGame() == null || risk.getGame().getState() == RiskGame.STATE_NEW_GAME) {
-            synchronized (risk) {
-                risk.wait();
+        // Wait until the replay thread has finished the whole script.
+        // Waiting only until the game leaves STATE_NEW_GAME is racy: a needInput()
+        // notification sent during setup can wake this thread after the replay
+        // has already moved on, so the game is still in progress when we assert.
+        // The replay thread clears the replay flag and then calls needInput(),
+        // whose notifyAll() under this monitor makes the final state visible here.
+        long deadline = System.currentTimeMillis() + REPLAY_TIMEOUT_MS;
+        synchronized (risk) {
+            while (risk.getGame() == null || risk.isReplay()) {
+                long remaining = deadline - System.currentTimeMillis();
+                if (remaining <= 0) {
+                    fail("replay of " + file + " did not finish within " + REPLAY_TIMEOUT_MS + "ms");
+                }
+                risk.wait(remaining);
             }
         }
-            
+
         assertEquals(RiskGame.STATE_GAME_OVER, risk.getGame().getState());
 
         if (risk.getGame().getGameMode() == RiskGame.MODE_DOMINATION) {
