@@ -136,7 +136,7 @@ export class Game {
  setCapital(id){
   const c=this.country(id);
   if(this.state!==STATE.CAPITAL||!c||c.owner!==this.active.id)return false;
-  this.active.capital=c.id;this.state=this.nextPlaceState();return true;
+  this.active.capital=c.id;this.state=STATE.END;return true;
  }
  trade(indices){
   if(this.state!==STATE.TRADE||!Array.isArray(indices)||indices.length!==3||new Set(indices).size!==3||
@@ -172,5 +172,5 @@ export class Game {
   }
   if(won)this.state=STATE.OVER;return won;
  }
- snapshot(){return JSON.parse(JSON.stringify({state:this.state,mode:this.mode,cardMode:this.cardMode,current:this.current,players:this.players,countries:this.countries,captured:this.captured,setupCompleted:this.setupCompleted,attacker:this.attacker,defender:this.defender,mustMove:this.mustMove,cardState:this.cardState}));}
+ snapshot(){return JSON.parse(JSON.stringify({state:this.state,mode:this.mode,cardMode:this.cardMode,current:this.current,players:this.players,countries:this.countries,captured:this.captured,setupCompleted:this.setupCompleted,attacker:this.attacker,defender:this.defender,mustMove:this.mustMove,attackerDice:this.attackerDice,defenderDice:this.defenderDice,cardState:this.cardState}));}
 }
