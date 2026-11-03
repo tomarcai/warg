@@ -9,8 +9,8 @@ export class Game {
   this.map=map;this.countries=map.countries.map(c=>({...c,neighbours:[...c.neighbours],owner:null,armies:0}));
   this.byId=new Map(this.countries.map(c=>[c.id,c]));this.players=[];this.state=STATE.NEW;
   this.mode=options.mode??MODE.DOMINATION;this.cardMode=options.cardMode??CARD_MODE.INCREASING;
-  this.maxDefendDice=options.maxDefendDice??2;this.minReinforcements=options.minReinforcements??3;
-  this.maxCards=options.maxCards??5;this.current=0;this.setupCompleted=0;
+  this.maxDefendDice=options.maxDefendDice??(this.cardMode===CARD_MODE.ITALIAN?3:2);this.minReinforcements=options.minReinforcements??(this.cardMode===CARD_MODE.ITALIAN?0:3);
+  this.maxCards=options.maxCards??(this.cardMode===CARD_MODE.ITALIAN?Number.MAX_SAFE_INTEGER:5);this.current=0;this.setupCompleted=0;
   this.attacker=null;this.defender=null;this.attackerDice=0;this.defenderDice=0;this.mustMove=0;
   this.captured=false;this.tradeCap=false;this.cardState=0;
   this.deck=options.cards?.map(c=>({...c}))??[];this.discard=[];this.missions=options.missions??[];
@@ -147,7 +147,7 @@ export class Game {
   if(this.cardMode===CARD_MODE.INCREASING)this.cardState=value;
   const owned=cards.filter(c=>c.countryId!=null&&this.country(c.countryId)?.owner===this.active.id);
   if(this.cardMode===CARD_MODE.ITALIAN)value+=2*owned.length;
-  else for(const c of owned)this.country(c.countryId).armies+=2;
+  else if(owned.length)this.country(owned[0].countryId).armies+=2;
   for(const i of [...indices].sort((a,b)=>b-a))this.discard.push(...this.active.cards.splice(i,1));
   this.active.reserve+=value;
   if(!this.canTrade()||(this.tradeCap&&this.active.cards.length<this.maxCards)){this.tradeCap=false;this.state=STATE.PLACE;}
