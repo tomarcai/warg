@@ -39,9 +39,9 @@ public final class CardTradeRules {
             if (wild == 3) return 12;
             if (wild == 2 || (wild == 0 && distinct.size() == 3)) return 10;
             if (wild == 1) {
-                if (first == Suit.WILDCARD) return fixedPair(second, third);
-                if (second == Suit.WILDCARD) return fixedPair(first, third);
-                return fixedPair(first, second);
+                if (first == Suit.WILDCARD) return second == third ? fixedPair(second, third) : 10;
+                if (second == Suit.WILDCARD) return first == third ? fixedPair(first, third) : 10;
+                return first == second ? fixedPair(first, second) : 10;
             }
             if (distinct.size() == 1) return fixedPair(first, second);
             return 0;
