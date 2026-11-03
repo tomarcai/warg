@@ -80,6 +80,24 @@ public final class CombatIntegrationTest {
         eq(1, ongoing.defenderLosses, "ongoing defender loss");
         ok(t4.phase() == TurnController.Phase.ROLLING, "continue combat");
         eq(1, t4.battleRounds(), "count battle rounds");
+        Board b5 = board(4, 1, false);
+        PlayerRoster players = new PlayerRoster(5);
+        players.add("red");
+        players.add("blue");
+        players.giveCard("red", CardTradeRules.Suit.CANNON);
+        for (int i = 0; i < 5; i++) players.giveCard("blue", CardTradeRules.Suit.INFANTRY);
+        TurnController t5 = new TurnController(b5, new Rules(2, true), "red", 0, players);
+        ok(t5.attack("a", "d"), "roster attack");
+        ok(t5.rollAttacker(3), "roster attacker roll");
+        ok(t5.rollDefender(1, "blue"), "roster defender roll");
+        CombatResult result = t5.battle(new int[]{5, 4, 3}, new int[]{0});
+        ok(result.defenderEliminated, "roster defender eliminated");
+        eq(6, players.get("red").cards().size(), "eliminated cards transferred");
+        eq(0, players.get("blue").cards().size(), "loser cards cleared");
+        ok(players.get("red").eliminatedPlayers().contains("blue"), "elimination recorded");
+        ok(t5.moveAfterConquest(3), "finish move with transferred cards");
+        ok(t5.phase() == TurnController.Phase.TRADE_CARDS, "excess cards force trade phase");
+        ok(!t5.endAttack(), "cannot skip forced trade");
         System.out.println("WARG combat integration tests passed");
     }
 }
