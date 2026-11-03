@@ -34,3 +34,13 @@ test('trade adds two armies only to the first owned card territory (standard)',a
  const r=s.execute('trade',{indices:[0,1,2]});assert.equal(r.ok,true);
  assert.equal(p.reserve>=4,true);assert.equal(g.country(1).armies,3);assert.equal(g.country(2).armies,1);
 });
+
+test('configuration preserves pregame players and selects Italian rules',async()=>{
+ const s=await create();const r=s.execute('configure',{mode:2,cardMode:2,autoplaceAll:true});
+ assert.equal(r.ok,true);assert.equal(r.state.mode,2);
+ assert.equal(s.game.players.length,2);assert.equal(s.game.minReinforcements,0);
+ assert.equal(s.game.maxDefendDice,3);assert.equal(s.game.maxCards,Number.MAX_SAFE_INTEGER);
+ assert.equal(s.execute('start').ok,true);
+ assert.equal(s.game.countries.filter(c=>c.owner!=null).length,42);
+ assert.equal(s.execute('configure',{mode:0}).ok,false);
+});
