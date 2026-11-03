@@ -28,3 +28,4 @@ Algunas librerías de terceros incluidas como `.jar` (por ejemplo en `Domination
 | `OldHardAI/` | IA antigua |
 | `MapStore/` | Tienda de mapas (Django) |
 | `website/` | Web del proyecto original |
+| `warg-node/` | Reescritura del juego en Node.js (rama `claude2`), ver [`warg-node/README.md`](warg-node/README.md) |

@@ -1,0 +1,14 @@
+{
+  "name": "warg",
+  "version": "0.1.0",
+  "description": "warg: Domination (yura.net) rewritten in Node.js - local game",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node src/server/server.js",
+    "cli": "node src/cli.js",
+    "test": "node --test test/*.test.js"
+  }
+}

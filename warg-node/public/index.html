@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>warg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Barlow+Condensed:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23c8962e'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' font-family='sans-serif' fill='%231e2419'%3E3%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- main menu -->
+<section id="screen-menu" class="screen">
+  <div class="menu-wrap">
+    <h1 class="brand">warg</h1>
+    <p class="brand-sub" data-t="warg.subtitle">Dominación del mundo, por turnos</p>
+    <nav class="menu-list">
+      <button class="menu-item" id="btn-new" data-t="mainmenu.newgame">Nueva partida</button>
+      <button class="menu-item" id="btn-load" data-t="mainmenu.loadgame">Cargar partida</button>
+      <button class="menu-item" id="btn-help" data-t="mainmenu.help">Ayuda</button>
+      <button class="menu-item" id="btn-about" data-t="mainmenu.about">Acerca de</button>
+    </nav>
+    <div class="menu-foot">
+      <label class="lang"><span data-t="warg.language">Idioma</span>
+        <select id="lang-select">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+<!-- new game setup -->
+<section id="screen-setup" class="screen" hidden>
+  <header class="setup-head">
+    <h2 data-t="newgame.title.local">Nueva partida (local)</h2>
+    <div class="setup-actions">
+      <button class="btn ghost" id="setup-cancel" data-t="newgame.cancel">Cancelar</button>
+      <button class="btn primary" id="setup-start" data-t="newgame.startgame">Empezar partida</button>
+    </div>
+  </header>
+  <div class="setup-grid">
+    <div class="setup-col">
+      <h3 data-t="newgame.label.map">Mapa:</h3>
+      <div id="map-list" class="map-list" role="listbox"></div>
+    </div>
+    <div class="setup-col">
+      <h3 data-t="newgame.label.players">Jugadores</h3>
+      <ol id="player-list" class="player-list"></ol>
+      <form id="add-player" class="add-player">
+        <input id="np-name" maxlength="20" autocomplete="off" aria-label="Nombre">
+        <select id="np-type" aria-label="Tipo"></select>
+        <div id="np-colors" class="swatches" role="radiogroup"></div>
+        <div class="add-row">
+          <button class="btn" type="submit" data-t="newgame.addplayer">Añadir jugador</button>
+          <button class="btn ghost" type="button" id="reset-players" data-t="newgame.resetplayers">Jugadores por defecto</button>
+        </div>
+      </form>
+
+      <div class="options">
+        <fieldset>
+          <legend data-t="newgame.label.gametype">Tipo de partida:</legend>
+          <label><input type="radio" name="mode" value="domination" checked> <span data-t="newgame.mode.domination">Dominación</span></label>
+          <label><input type="radio" name="mode" value="capital"> <span data-t="newgame.mode.capital">Capital</span></label>
+          <label><input type="radio" name="mode" value="mission"> <span data-t="newgame.mode.mission">Misión</span></label>
+        </fieldset>
+        <fieldset>
+          <legend data-t="newgame.label.cardsoptions">Opciones de cartas:</legend>
+          <label><input type="radio" name="cardmode" value="increasing" checked> <span data-t="newgame.cardmode.increasing">Incremental</span></label>
+          <label><input type="radio" name="cardmode" value="fixed"> <span data-t="newgame.cardmode.fixed">Fijo</span></label>
+          <label><input type="radio" name="cardmode" value="italianlike"> <span data-t="newgame.cardmode.italianlike">Italiano</span></label>
+        </fieldset>
+        <fieldset>
+          <legend data-t="warg.options">Opciones</legend>
+          <label><input type="checkbox" id="opt-autoplace"> <span data-t="newgame.autoplace">Colocar automáticamente</span></label>
+          <label><input type="checkbox" id="opt-recycle" checked> <span data-t="newgame.recycle">Reciclar cartas</span></label>
+          <label class="inline"><span data-t="warg.defenderdice">Dados de defensa</span>
+            <select id="opt-defdice">
+              <option value="" data-t="warg.default">Por defecto</option>
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+            </select>
+          </label>
+          <label class="inline"><span data-t="newgame.label.cards">Cartas:</span>
+            <select id="opt-cards"></select>
+          </label>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- the game -->
+<section id="screen-game" class="screen game" hidden>
+  <header class="game-top">
+    <nav class="views" role="tablist" aria-label="Vista del mapa">
+      <button role="tab" data-view="0" data-t="game.tabs.continents">Continentes</button>
+      <button role="tab" data-view="1" data-t="game.tabs.ownership">Por dueño</button>
+      <button role="tab" data-view="2" data-t="game.tabs.borderthreat">Fronteras</button>
+      <button role="tab" data-view="3" data-t="game.tabs.cardownership">Jugador actual</button>
+      <button role="tab" data-view="4" data-t="game.tabs.troopstrength">Concentración</button>
+      <button role="tab" data-view="5" data-t="game.tabs.connectedempire">Imperio conectado</button>
+    </nav>
+    <div class="tools">
+      <button class="tool" id="t-stats" data-t-title="game.button.statistics" data-t="game.button.statistics">Estadísticas</button>
+      <button class="tool" id="t-cards" data-t-title="game.button.cards" data-t="game.button.cards">Cartas</button>
+      <button class="tool" id="t-mission" data-t-title="game.button.mission" data-t="game.button.mission">Misión</button>
+      <button class="tool" id="t-undo" data-t-title="game.button.undo" data-t="game.button.undo">Deshacer</button>
+      <button class="tool" id="t-menu" data-t-title="game.button.menu" data-t="game.button.menu">Menú</button>
+    </div>
+  </header>
+  <div class="map-stage" id="map-stage">
+    <canvas id="map-canvas"></canvas>
+    <div id="hover-name" class="hover-name" hidden></div>
+    <div id="toast" class="toast" hidden></div>
+  </div>
+  <footer class="game-bar">
+    <div id="turn-chits" class="chits" aria-label="Orden de turno"></div>
+    <div class="status">
+      <div id="status-note" class="note"></div>
+      <div id="status-help" class="help-line"></div>
+    </div>
+    <button id="go" class="go" disabled></button>
+  </footer>
+  <details class="console" id="console">
+    <summary data-t="swing.tab.console">Consola</summary>
+    <pre id="log" class="log" aria-live="polite"></pre>
+    <form id="cmd-form" class="cmd"><span>&gt;</span><input id="cmd" autocomplete="off" spellcheck="false" aria-label="Comando"></form>
+  </details>
+</section>
+
+<div id="modal-root"></div>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>
