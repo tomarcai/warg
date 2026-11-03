@@ -11,8 +11,8 @@ async function command(action,args={}){
   const answer=await r.json();
   if(!r.ok||!answer.ok){status='Orden rechazada: '+(answer.error??'acción no válida en esta fase');}
   else{status='';selected=[];selectedCards.clear();}
-  state=answer.state??state;render();
- }catch(e){status=e.message;render();}
+  state=answer.state??state;render();return answer.ok;
+ }catch(e){status=e.message;render();return false;}
 }
 function player(id){return state.players.find(p=>p.id===id);}
 function current(){return state.players[state.current];}
@@ -92,7 +92,13 @@ $('addPlayer').addEventListener('click',()=>{
  if(!name)return;
  command('addPlayer',{name,color});$('playerName').value='';
 });
-$('start').addEventListener('click',()=>command('start'));
+$('start').addEventListener('click',async()=>{
+ const ok=await command('configure',{
+  mode:Number($('gameMode').value),cardMode:Number($('cardMode').value),
+  autoplaceAll:$('autoplaceAll').checked,recycleCards:$('recycleCards').checked
+ });
+ if(ok)await command('start');
+});
 $('reset').addEventListener('click',async()=>{
  if(!confirm('¿Reiniciar la partida actual?'))return;
  const r=await fetch('/api/reset',{method:'POST'});state=await r.json();selected=[];status='';render();
