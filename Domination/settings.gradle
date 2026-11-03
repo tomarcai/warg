@@ -1,22 +1,42 @@
-//include ':..:BaseGameUtils'
 //include ':..:AndroidME'
 // can not do as above as does not build on Windows http://b.android.com/79505
 // example: https://android.googlesource.com/platform/tools/buildSrc/+/master/base/settings.gradle
 
 rootProject.name = "Domination"
 
-include ':sharedUI', ':android', ':ios'
+// SwingME, AndroidME and iOSME are separate yura.net repositories that upstream
+// expects to be checked out next to this folder (../SwingME, ../AndroidME, ../iOSME).
+// They are not part of this repository, so each one is only included when its
+// folder exists. Without them:
+//  - sharedUI falls back to swingUI/lib/SwingME.jar (see sharedUI/build.gradle)
+//  - the android and ios modules are skipped, as they cannot build without them
+def siblingDir = { String name -> new File(rootDir.getParentFile(), name) }
+def hasSibling = { String name -> new File(siblingDir(name), 'build.gradle').isFile() }
 
-include ':SwingME'
-project(':SwingME').projectDir = new File(rootDir.getParentFile(), 'SwingME')
+include ':sharedUI'
 
-include ':AndroidME'
-project(':AndroidME').projectDir = new File(rootDir.getParentFile(), 'AndroidME')
+if (hasSibling('SwingME')) {
+    include ':SwingME'
+    project(':SwingME').projectDir = siblingDir('SwingME')
+}
 
-include ':iOSME'
-project(':iOSME').projectDir = new File(rootDir.getParentFile(), 'iOSME')
+if (hasSibling('AndroidME')) {
+    include ':AndroidME'
+    project(':AndroidME').projectDir = siblingDir('AndroidME')
+    include ':android'
+}
+else {
+    println "settings.gradle: ../AndroidME not found, skipping :android"
+}
 
-
+if (hasSibling('iOSME')) {
+    include ':iOSME'
+    project(':iOSME').projectDir = siblingDir('iOSME')
+    include ':ios'
+}
+else {
+    println "settings.gradle: ../iOSME not found, skipping :ios"
+}
 
 // this will only be supported when Android Studio adds support for gradle 3
 //includeBuild '../AndroidME'

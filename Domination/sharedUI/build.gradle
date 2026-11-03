@@ -23,7 +23,13 @@ dependencies {
     api rootProject
 
     // we link to the project and not the jar so any code changes are picked up automatically
-    api project(":SwingME")
+    // when ../SwingME is not checked out (see settings.gradle), use the prebuilt jar instead
+    if (findProject(':SwingME') != null) {
+        api project(":SwingME")
+    }
+    else {
+        api files('../swingUI/lib/SwingME.jar')
+    }
 
     api fileTree(dir: 'lib', include: ['LobbyCore.jar', 'MiniLobbyClient.jar'])
 
